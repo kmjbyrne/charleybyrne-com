@@ -1,0 +1,7 @@
+/instance
+/node_modules
+/dist
+/.vscode
+/.env
+/cdk
+/.nuxt
