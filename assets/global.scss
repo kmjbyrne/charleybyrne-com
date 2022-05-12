@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap");
+
+@import "@snapatoms/ui/styles/helpers";
+@import "mixins";
+@import "grid";
+@import "nuxt-content";
+
+html {
+    overflow-y: scroll;
+}
+
+:root {
+    --theme-anchor: #009fff;
+    --theme-bg: #1a1a1a;
+    --theme-fg-fade: rgba(122, 122, 122, 0.23);
+    --menu-bg-color: transparent;
+    --menu-fg-color: black;
+    --theme-secondary-fg: #ccc;
+    --theme-tertiary-fg: var(var(--theme-anchor));
+}
+
+body,
+html {
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0;
+    scroll-behavior: smooth;
+    margin: 0;
+    width: 100%;
+    color: var(--theme-fg, white);
+    background-color: var(--theme-bg);
+
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 17px;
+    @include below-large {
+        font-size: 14px;
+    }
+}
+
+.font-075rem {
+    font-size: 0.75rem;
+}
+
+.content-body {
+    line-height: 1.7;
+    text-align: justify;
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+        // margin: 0;
+        box-sizing: border-box;
+
+        @include below-large {
+            padding: 0;
+            list-style: none;
+            li {
+                margin: 1rem 0;
+                padding: 1rem 0;
+                // border-top: 1px solid var(--theme-fg-fade);
+                border-bottom: 1px solid var(--theme-fg-fade);
+                ol,
+                ul {
+                    border-left: 2px solid #ccc;
+                    li {
+                        padding: 0 0 0 0.5rem;
+                        margin-left: 0.5rem;
+                        border-bottom: none;
+                    }
+                }
+            }
+            li::before {
+                content: "";
+            }
+        }
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.light {
+    color: rgb(158, 158, 158);
+}

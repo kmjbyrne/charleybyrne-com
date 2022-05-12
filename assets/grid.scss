@@ -1,0 +1,74 @@
+// @import "mixins";
+
+// .container {
+//     margin: 0 auto;
+//     position: relative;
+//     width: auto;
+
+//     @include responsive("xl", "min") {
+//         max-width: 1344px;
+//     }
+// }
+
+// .container-sm {
+//     margin: 0 auto;
+//     position: relative;
+//     width: auto;
+
+//     @include responsive("large", "min") {
+//         max-width: $small;
+//     }
+// }
+
+// @include responsive("large", "min") {
+//     .sticky-view {
+//         position: sticky;
+//         top: 4.5rem;
+//         overflow: auto;
+//     }
+
+//     .columns {
+//         display: flex;
+//     }
+// }
+
+// .column {
+//     display: block;
+//     flex-basis: 0;
+//     flex-grow: 1;
+//     flex-shrink: 1;
+//     padding: 0 0.75rem;
+//     box-sizing: inherit;
+// }
+
+// // create columns
+// @for $i from 1 through 12 {
+//     $percentage: calc($i / 12);
+//     .column-#{$i} {
+//         display: block;
+//         // flex-basis: 0;
+//         // flex-grow: 1;
+//         // flex-shrink: 1;
+//         padding: 0 0.75rem;
+
+//         // flex: 0 0 auto;
+//         flex: 1;
+
+//         @include responsive("large", "min") {
+//             max-width: percentage($percentage);
+//             width: percentage($percentage);
+//         }
+//     }
+// }
+
+// .columns {
+//     &--tight > * {
+//         margin: 0;
+//         padding: 0 !important;
+//     }
+// }
+
+// .row {
+//     display: flex;
+//     flex-direction: row;
+// }

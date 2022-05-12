@@ -1,0 +1,30 @@
+$small: 640px;
+
+$breakpoints: (
+    "small": $small,
+    "medium": 1007px,
+    "large": 1008px,
+    "xl": 1344px,
+);
+
+@mixin responsive($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+
+        @if $type==max {
+            $width: $width - 1px;
+        }
+
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin from-large {
+    $width: map_get($breakpoints, "large");
+    $width: $width - 1px;
+    @media only screen and (#{min}-width: $width) {
+        @content;
+    }
+}
