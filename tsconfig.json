@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "jsxFactory": "h",
+        "target": "ES2018",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
+        "esModuleInterop": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": true,
+        "noEmit": true,
+        "noImplicitThis": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["./*"],
+            "@/*": ["./*"]
+        },
+        "types": ["@nuxt/types", "@nuxtjs/axios", "@nuxt/content", "@types/node", "@nuxtjs/auth-next"]
+    },
+    "exclude": ["node_modules", ".nuxt", "dist", "cdk"]
+}
