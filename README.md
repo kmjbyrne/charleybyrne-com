@@ -2,6 +2,10 @@
 
 Homepage: [charleybyrne.com](https://charleybyrne.com)
 
+Wiki pages: [charleybyrne.com/wiki](https://charleybyrne.com/wiki)
+
+Recipes pages: [charleybyrne.com/recipes](https://charleybyrne.com/recipes)
+
 Build with <3 using Vue meta-framework [NuxtJS](https://nuxtjs.org/).
 
 ## Structure
