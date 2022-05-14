@@ -2,6 +2,11 @@
 title: Basics for Bash CLI Programs
 description: Starter snippets for Bash command line interfaces.
 category: Linux
+tags:
+  - cli
+  - linux
+  - bash
+  - snippets
 ---
 
 ## CLI Arguments

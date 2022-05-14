@@ -1,6 +1,10 @@
 ---
 title: Generating Random Passwords With Bash
 category: Bash
+tags:
+  - security
+  - passwords
+  - bash
 ---
 
 ## Using Date SHA256

@@ -1,6 +1,11 @@
 ---
 title: Prettier Markdown Formatting
 category: Workflow
+tags:
+  - prettier
+  - markdown
+  - config
+  - workflow
 ---
 
 ## Prettier Config

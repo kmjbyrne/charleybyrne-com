@@ -1,6 +1,9 @@
 ---
 title: Killing Port Process
 category: Linux
+tags:
+  - linux
+  - bash
 ---
 
 How to kill a process running a particular port in Linux.

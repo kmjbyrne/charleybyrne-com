@@ -1,6 +1,10 @@
 ---
 title: Align Div Middle
 category: CSS
+tags:
+  - css
+  - ui
+  - scss
 ---
 
 ## Code

@@ -1,6 +1,12 @@
 ---
 title: Setting Up Docker SQL Database On Raspberry Pi
 category: RaspberryPi
+tags:
+  - raspberry-pi
+  - docker
+  - mariadb
+  - mysql
+  - database
 ---
 
 Estimated time: 20 minutes (+10 if older distro version).

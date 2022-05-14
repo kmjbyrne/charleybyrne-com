@@ -1,6 +1,9 @@
 ---
 title: Python Decorators 101
 category: Python
+tags:
+  - python
+  - decorators
 ---
 
 ```python

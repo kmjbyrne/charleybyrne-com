@@ -1,6 +1,12 @@
 ---
 title: HTML Select Placeholder
 category: HTML
+tags:
+  - html
+  - vue
+  - nuxtjs
+  - css
+  - typescript
 ---
 
 How to create an HTML select with placeholder option.
@@ -33,8 +39,13 @@ How to create an HTML select with placeholder option.
 
 <script lang="ts">
 import Vue from "vue";
+
+interface ComponentData {
+  categories: [];
+  category: [];
+}
 export default {
-  data() {
+  data(): ComponentData {
     return {
       categories: ["Sports", "News", "Science"],
       category: "default",
