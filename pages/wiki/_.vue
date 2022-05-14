@@ -4,11 +4,17 @@
             <div class="column-8">
                 <section class="panel m1 content-body">
                     <h3 id="title">{{ page.title }}</h3>
+                    <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags">
+                        <NuxtLink :to="'/wiki/tag/' + tag" class="flex-0 flex-inline align-center" v-for="tag in page.tags || []" :key="tag">
+                            <span>{{ tag }}</span>
+                            <img class="icon-sm" src="/tag.svg" />
+                        </NuxtLink>
+                    </div>
                     <nuxt-content :document="page" />
                 </section>
             </div>
             <div class="column-4 font-075rem">
-                <div class="drawer-mobile p1 drawer-mobile--right mobile-sticky-top-0" :class="toc ? 'mobile-left-auto z200 handle--active drawer-mobile--open' : ''">
+                <div class="drawer-mobile p1 z500 drawer-mobile--right mobile-sticky-top-0" :class="toc ? 'mobile-left-auto z200 handle--active drawer-mobile--open' : ''">
                     <div class="handle z200 handle--right-edge mobile-abs-top-10pc mobile-only" @click="toggle('toc')">
                         <img class="s2" src="/document.svg" />
                     </div>
@@ -21,6 +27,18 @@
                                 </li>
                             </ul>
                         </nav>
+                    </section>
+                </div>
+                <div class="drawer-mobile p1 drawer-mobile--right mobile-sticky-top-0" :class="toc ? 'mobile-left-auto handle--active drawer-mobile--open' : ''">
+                    <div class="handle z200 handle--right-edge mobile-abs-top-10pc mobile-only" @click="toggle('toc')">
+                        <img class="s2" src="/document.svg" />
+                    </div>
+                    <section class="panel">
+                        <div class="columns align-center">
+                            <h3>Tags</h3>
+                            <div class="flex"><img class="icon-sm" src="/tag.svg" /></div>
+                        </div>
+                        <Tags :tags="tags"></Tags>
                     </section>
                 </div>
             </div>
@@ -100,12 +118,33 @@ export default Vue.extend({
             return;
         }
         const page = await $content(route.fullPath.slice(1), { deep: true }).fetch();
-        return { page };
+        const tags = await $content("/wiki", { deep: true }).only(["tags"]).fetch();
+        const _tags = new Set();
+
+        var _counter: any = new Proxy(
+            {},
+            {
+                get: (target: any, name) => (name in target ? target[name] : 0),
+            }
+        );
+        tags.forEach((e: any) => {
+            e.tags?.map((a: any) => {
+                _tags.add(a);
+                _counter[a] += 1;
+            });
+        });
+
+        return { page, tags: _counter };
     },
 });
 </script>
 
 <style lang="scss" scoped>
+.tags {
+    a:hover span {
+        opacity: 0.5;
+    }
+}
 .toc {
     ul li,
     ul {

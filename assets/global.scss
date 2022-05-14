@@ -4,6 +4,7 @@
 @import "mixins";
 @import "grid";
 @import "nuxt-content";
+@import "forms";
 
 html {
     overflow-y: scroll;
@@ -92,4 +93,9 @@ a {
 
 .light {
     color: rgb(158, 158, 158);
+}
+
+.icon-sm {
+    width: 1rem;
+    margin: 0 1rem;
 }

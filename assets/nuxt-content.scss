@@ -21,6 +21,10 @@
         line-height: 2rem;
     }
 
+    a {
+        color: var(--theme-anchor);
+    }
+
     blockquote p {
         display: inline;
     }

@@ -68,6 +68,7 @@ export default Vue.extend({
     methods: {
         update(key: string, value: any) {
             this[key] = value;
+            localStorage.setItem("theme", this.theme);
         },
         setDockToggle() {
             this.dock = !this.dock;
@@ -142,6 +143,7 @@ export default Vue.extend({
 
     --snapatoms-panel-bg: #1a1a1a;
     --snapatoms-panel-fg: inherit;
+    --theme-light-text: #9d9d9d;
 }
 
 .navbar {
@@ -155,6 +157,7 @@ export default Vue.extend({
     --theme-fg: black;
     --menu-bg-color: black;
     --menu-fg-color: white;
+    --theme-light-text: #9d9d9d;
     --snapatoms-panel-bg: white;
     --theme-pre-bg: rgba(226, 226, 226, 0.56);
     --theme-pre-fg: rgb(255, 36, 0);
@@ -162,5 +165,9 @@ export default Vue.extend({
     .toc--in-view {
         border-left: 3px solid var(--theme-anchor) !important;
     }
+}
+
+.theme-light-text {
+    color: var(--theme-light-text);
 }
 </style>
