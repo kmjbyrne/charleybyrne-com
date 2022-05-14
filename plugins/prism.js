@@ -2,6 +2,9 @@ import Prism from "prismjs";
 
 // Include the toolbar plugin: (optional)
 import "prismjs/plugins/toolbar/prism-toolbar";
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-python";
 // import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 
 // Include the line numbers plugin: (optional)
