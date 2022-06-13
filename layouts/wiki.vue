@@ -1,7 +1,11 @@
 <template>
     <div class="wiki" :class="theme">
         <div class="dock z500" :class="{ 'dock--open': dock }">
-            <div class="dock__toggle expand expand--center" @click="setDockToggle" :class="{ 'expand--active': dock }"></div>
+            <div
+                class="dock__toggle expand expand--center"
+                @click="setDockToggle"
+                :class="{ 'expand--active': dock }"
+            ></div>
             <div class="dock__content"></div>
         </div>
         <div class="mobile-only header z100">
@@ -10,17 +14,36 @@
                     <a class="header__link">{{ $config.title }}</a>
                 </div>
                 <div class="header__item mobile-only icons">
-                    <img class="header__link" src="/sun.svg" v-if="theme === 'theme-dark'" @click="update('theme', 'theme-light')" />
-                    <img class="header__link" src="/moon.svg" v-if="theme === 'theme-light'" @click="update('theme', 'theme-dark')" />
+                    <img
+                        class="header__link"
+                        src="/sun.svg"
+                        v-if="theme === 'theme-dark'"
+                        @click="update('theme', 'theme-light')"
+                    />
+                    <img
+                        class="header__link"
+                        src="/moon.svg"
+                        v-if="theme === 'theme-light'"
+                        @click="update('theme', 'theme-dark')"
+                    />
                 </div>
             </div>
             <div class="p1 flex justify-right align-center mobile-only">
-                <div class="hamburger" :class="navbar ? 'hamburger--active' : ''" @click="set('navbar')">
+                <div
+                    class="hamburger"
+                    :class="navbar ? 'hamburger--active' : ''"
+                    @click="set('navbar')"
+                >
                     <span></span>
                 </div>
             </div>
         </div>
-        <div class="navbar z200 mobile-h100 mobile-fixed-top-0 mobile-charcoal" :class="navbar ? 'mobile-right-left-50pc' : 'mobile-fixed-right-m100pc'">
+        <div
+            class="navbar z200 mobile-h100 mobile-fixed-top-0 mobile-charcoal"
+            :class="
+                navbar ? 'mobile-right-left-50pc' : 'mobile-fixed-right-m100pc'
+            "
+        >
             <div class="navbar__inner">
                 <div class="navbar__group">
                     <div class="navbar__item">
@@ -29,20 +52,52 @@
                 </div>
                 <div class="navbar__group justify-right">
                     <div class="navbar__item desktop-only icons">
-                        <img class="navbar__link" src="/sun.svg" v-show="theme === 'theme-dark'" @click="update('theme', 'theme-light')" />
-                        <img class="navbar__link" src="/moon.svg" v-show="theme === 'theme-light'" @click="update('theme', 'theme-dark')" />
+                        <img
+                            class="navbar__link"
+                            src="/sun.svg"
+                            v-show="theme === 'theme-dark'"
+                            @click="update('theme', 'theme-light')"
+                        />
+                        <img
+                            class="navbar__link"
+                            src="/moon.svg"
+                            v-show="theme === 'theme-light'"
+                            @click="update('theme', 'theme-dark')"
+                        />
                     </div>
                     <div class="navbar__item">
-                        <NuxtLink class="navbar__link" to="/recipes">Recipes</NuxtLink>
+                        <NuxtLink class="navbar__link" to="/recipes"
+                            >Recipes</NuxtLink
+                        >
                     </div>
                     <div class="navbar__item">
-                        <NuxtLink class="navbar__link" to="/wiki">Wiki</NuxtLink>
+                        <NuxtLink class="navbar__link" to="/wiki"
+                            >Wiki</NuxtLink
+                        >
                     </div>
                     <div class="navbar__item">
-                        <a class="navbar__link expand" @click="toggle($event, '')">Theme</a>
+                        <a
+                            class="navbar__link expand"
+                            @click="toggle($event, '')"
+                            >Theme</a
+                        >
                         <div class="navbar__nested panel desktop-abs-right-0">
-                            <div class="navbar__item"><div class="navbar__link" @click="setTheme('light')">Light</div></div>
-                            <div class="navbar__item"><div class="navbar__link" @click="setTheme('dark')">Dark</div></div>
+                            <div class="navbar__item">
+                                <div
+                                    class="navbar__link"
+                                    @click="setTheme('light')"
+                                >
+                                    Light
+                                </div>
+                            </div>
+                            <div class="navbar__item">
+                                <div
+                                    class="navbar__link"
+                                    @click="setTheme('dark')"
+                                >
+                                    Dark
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
