@@ -31,10 +31,14 @@ To ensure the script can run, one just needs to install `cryptography`.
 Usage:
 
 ```shell
+echo "I am plaintext" > /tmp/test.txt
 python -m venv venv
 source venv/bin/activate
 pip install cryptography
 python fsecure.py encrypt /tmp/test.txt "12345"
+cat /tmp/test.txt
+# > will no longer be plaintext !
+
 ```
 
 Outputs:
