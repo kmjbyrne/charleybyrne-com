@@ -15,7 +15,7 @@ tags: greek,chicken,dinner
 - 1 tsp salt
 - 1/2 tsp pepper
 - 1 tsp paprika
-- 1 kg chicken thigh (skin on for extra flavour, skinless for healthier variant)
+- 1kg chicken thigh (skin on for extra flavour, skinless for healthier variant)
 
 ## Method
 
