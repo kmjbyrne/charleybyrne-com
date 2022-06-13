@@ -18,7 +18,7 @@
         "test": "jest"
     },
     "prettier": {
-        "printWidth": 140,
+        "printWidth": 160,
         "semi": true,
         "tabWidth": 4,
         "singleQuote": false,
