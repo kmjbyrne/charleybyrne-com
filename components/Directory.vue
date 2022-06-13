@@ -62,7 +62,7 @@ export default {
             return 0;
         },
         getPath(e: any): string {
-            return `${e.path}`;
+            return `${e.path}/`;
         },
     },
 };
