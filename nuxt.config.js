@@ -8,7 +8,7 @@ export default {
 
     publicRuntimeConfig: {
         baseURL: process.env.BASE_URL || "https://nuxtjs.org",
-        title: process.env.APP_TITLE || "Title Here",
+        title: process.env.APP_TITLE || "Charley Byrne",
     },
 
     head: {
