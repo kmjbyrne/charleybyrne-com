@@ -24,7 +24,7 @@
             <div class="navbar__inner">
                 <div class="navbar__group">
                     <div class="navbar__item">
-                        <a class="navbar__link">{{ $config.title }}</a>
+                        <a class="navbar__link">Charley Byrne</a>
                     </div>
                 </div>
                 <div class="navbar__group justify-right">
