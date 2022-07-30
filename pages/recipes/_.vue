@@ -10,16 +10,9 @@
             <div class="column-4">
                 <div
                     class="drawer-mobile mobile-z200 desktop-p1 drawer-mobile--right mobile-sticky-top-0"
-                    :class="
-                        toc
-                            ? 'mobile-left-auto z200 handle--active drawer-mobile--open'
-                            : ''
-                    "
+                    :class="toc ? 'mobile-left-auto z200 handle--active drawer-mobile--open' : ''"
                 >
-                    <div
-                        class="handle z500 handle--right-edge mobile-abs-top-20pc mobile-only"
-                        @click="toggle('toc')"
-                    >
+                    <div class="handle z500 handle--right-edge mobile-abs-top-20pc mobile-only" @click="toggle('toc')">
                         <img class="s2" src="/document.svg" />
                     </div>
 
@@ -33,9 +26,7 @@
                                             class="link"
                                             :href="'#' + item.id"
                                             :class="{
-                                                'toc--in-view':
-                                                    item.id ===
-                                                    currentlyActiveToc,
+                                                'toc--in-view': item.id === currentlyActiveToc,
                                             }"
                                             >{{ item.text }}</a
                                         >
@@ -93,13 +84,9 @@ export default Vue.extend({
         }, this.observerOptions);
 
         // Track all sections that have an `id` applied
-        document
-            .querySelectorAll(
-                ".nuxt-content h2[id], .nuxt-content h3[id] .nuxt-content h1[id]"
-            )
-            .forEach((section) => {
-                this.observer.observe(section);
-            });
+        document.querySelectorAll(".nuxt-content h2[id], .nuxt-content h3[id] .nuxt-content h1[id]").forEach((section) => {
+            this.observer.observe(section);
+        });
     },
 
     head(): any {
@@ -108,6 +95,7 @@ export default Vue.extend({
             meta: [
                 {
                     content: this.page.description,
+                    description: this.page.description,
                 },
             ],
         };
