@@ -7,8 +7,10 @@
         "types/*.d.ts"
     ],
     "scripts": {
-        "build": "nuxt build",
+        "build": "npm run format:check && nuxt build",
         "dev": "nuxt",
+        "format:check": "prettier -c .",
+        "format": "prettier -w .",
         "generate": "nuxt generate",
         "lint": "npm run lint:js && npm run lint:style",
         "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
