@@ -24,7 +24,6 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    layout: "wiki",
     props: {
         directory: { type: String },
         auto: { type: Boolean, default: false },
@@ -47,15 +46,11 @@ export default Vue.extend({
     },
 
     async fetch() {
-        this.$config.title = "Charley Byrne [Recipes]";
+        // this.$config.title = "Charley Byrne [Recipes]";
         this.parent = this.$route.path.split("/").slice(1, 2).pop()?.toString() || "";
         this.files = await this.$content(this.parent, { deep: true }).without(["body"]).fetch();
         this.categories = this.files.reduce((acc: any, e: any) => {
             return { ...acc, [e.category]: [] };
-        });
-
-        this.files.forEach((element: any) => {
-            // this.categories[element.category].push(element);
         });
     },
 });
