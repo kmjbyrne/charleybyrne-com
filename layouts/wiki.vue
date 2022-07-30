@@ -172,6 +172,14 @@ export default Vue.extend({
     -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#__nuxt,
+#__layout,
+.wiki {
+    height: 100%;
+}
+
 .icons {
     img {
         width: 1.5rem;

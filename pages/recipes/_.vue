@@ -10,9 +10,16 @@
             <div class="column-4">
                 <div
                     class="drawer-mobile mobile-z200 desktop-p1 drawer-mobile--right mobile-sticky-top-0"
-                    :class="toc ? 'mobile-left-auto z200 handle--active drawer-mobile--open' : ''"
+                    :class="
+                        toc
+                            ? 'mobile-left-auto z200 handle--active drawer-mobile--open'
+                            : ''
+                    "
                 >
-                    <div class="handle z500 handle--right-edge mobile-abs-top-20pc mobile-only" @click="toggle('toc')">
+                    <div
+                        class="handle z500 handle--right-edge mobile-abs-top-20pc mobile-only"
+                        @click="toggle('toc')"
+                    >
                         <img class="s2" src="/document.svg" />
                     </div>
 
@@ -22,7 +29,16 @@
                             <nav class="toc">
                                 <ul class="nav-items">
                                     <li v-for="item in page.toc" :key="item.id">
-                                        <a class="link" :href="'#' + item.id" :class="{ 'toc--in-view': item.id === currentlyActiveToc }">{{ item.text }}</a>
+                                        <a
+                                            class="link"
+                                            :href="'#' + item.id"
+                                            :class="{
+                                                'toc--in-view':
+                                                    item.id ===
+                                                    currentlyActiveToc,
+                                            }"
+                                            >{{ item.text }}</a
+                                        >
                                     </li>
                                 </ul>
                             </nav>
@@ -77,9 +93,13 @@ export default Vue.extend({
         }, this.observerOptions);
 
         // Track all sections that have an `id` applied
-        document.querySelectorAll(".nuxt-content h2[id], .nuxt-content h3[id] .nuxt-content h1[id]").forEach((section) => {
-            this.observer.observe(section);
-        });
+        document
+            .querySelectorAll(
+                ".nuxt-content h2[id], .nuxt-content h3[id] .nuxt-content h1[id]"
+            )
+            .forEach((section) => {
+                this.observer.observe(section);
+            });
     },
 
     head(): any {
@@ -106,7 +126,13 @@ export default Vue.extend({
     },
 
     async asyncData({ $content, route }) {
-        const page = await $content(route.fullPath.slice(1), { deep: true }).fetch();
+        let url = route.fullPath.slice(1);
+        if (url.endsWith("/")) {
+            url = url.slice(0, url.length - 2);
+        }
+        const page = await $content(route.fullPath.slice(1), {
+            deep: true,
+        }).fetch();
         return { page };
     },
 });

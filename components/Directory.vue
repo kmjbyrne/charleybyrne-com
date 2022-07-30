@@ -15,19 +15,14 @@
 </template>
 
 <script lang="ts">
-interface Props {
-    search?: string;
-    categories: any;
-    category?: string;
-}
-
-export default {
+import Vue from "vue";
+export default Vue.extend({
     props: {
         directory: { type: Array, default: () => [] },
         prefix: { type: String },
         label: { type: String, default: "Directory" },
     },
-    data(): Props {
+    data(): any {
         return {
             search: "",
             categories: undefined,
@@ -41,12 +36,20 @@ export default {
             // @ts-ignore
             if (this["search"] !== "") {
                 // @ts-ignore
-                files = this["directory"].filter((e: any) => e.title.toLowerCase().includes(this["search"].toLowerCase()));
+                files = this["directory"].filter((e: any) =>
+                    // @ts-ignore
+                    e.title.toLowerCase().includes(this["search"].toLowerCase())
+                );
             }
             // @ts-ignore
             if (this["category"] && this["category"] !== "default") {
                 // @ts-ignore
-                files = files.filter((e: any) => e.category.toLowerCase().includes(this["category"].toLowerCase()));
+                files = files.filter((e: any) =>
+                    e.category
+                        .toLowerCase()
+                        // @ts-ignore
+                        .includes(this["category"].toLowerCase())
+                );
             }
             // @ts-ignore
             return files.sort((a: any, b: any) => this["comparator"](a, b, "title"));
@@ -62,10 +65,10 @@ export default {
             return 0;
         },
         getPath(e: any): string {
-            return `${e.path}/`;
+            return `${e.path}`;
         },
     },
-};
+});
 </script>
 
 <style lang="scss" scoped>
