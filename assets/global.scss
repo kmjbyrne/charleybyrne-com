@@ -26,9 +26,8 @@ html {
 
 body,
 html {
-    font-size: 17px;
     letter-spacing: 0.2px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
     padding: 0;
     scroll-behavior: smooth;
@@ -45,7 +44,6 @@ html {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 
-    font-size: 17px;
     @include below-large {
         font-size: 14px;
     }
@@ -116,4 +114,16 @@ a {
 .icon-sm {
     width: 1rem;
     margin: 0 1rem;
+}
+
+h1 {
+    font-size: 1.15rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1.1rem;
 }

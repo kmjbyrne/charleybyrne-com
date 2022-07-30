@@ -6,10 +6,7 @@
         </div>
         <div class="columns columns--tight">
             <div class="column-3">
-                <div
-                    class="drawer-mobile p1 mobile-fixed-left z100 mobile-fixed-top mobile-h100 mobile-sticky-top-0"
-                    :class="open ? 'drawer-mobile--open' : ''"
-                >
+                <div class="drawer-mobile p1 mobile-fixed-left z100 mobile-fixed-top mobile-h100 mobile-sticky-top-0" :class="open ? 'drawer-mobile--open' : ''">
                     <div class="panel">
                         <h3>Directory</h3>
                         <Directory :directory="files"></Directory>

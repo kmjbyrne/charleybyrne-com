@@ -3,7 +3,8 @@
         <template>
             <div class="column-8">
                 <section class="panel m1 content-body">
-                    <h3 id="title">{{ page.title }}</h3>
+                    <h1 id="title">{{ page.title }}</h1>
+                    <p>{{ page.description }}</p>
                     <nuxt-content :document="page" />
                 </section>
             </div>
