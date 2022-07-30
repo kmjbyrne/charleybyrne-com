@@ -1,7 +1,10 @@
 ---
 title: Pilau Rice
 category: Sides
-tags: sides, rice, indian
+tags:
+  - sides
+  - rice
+  - indian
 ---
 
 Serves 2 large

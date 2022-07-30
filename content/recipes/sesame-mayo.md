@@ -1,6 +1,6 @@
 ---
 title: Sesame Mayonnaise
-description: ""
+description: "Sesame mayonnaise, dressing or dip"
 category: Dressing
 ---
 

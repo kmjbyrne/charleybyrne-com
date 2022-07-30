@@ -2,7 +2,10 @@
 title: Watermelon Tuna Chunks
 description: "Like tuna... but watermelon"
 category: Vegan
-tags: vegan, vegan-tuna, watermelon
+tags:
+  - vegan
+  - vegan-tuna
+  - watermelon
 ---
 
 ## Ingredients

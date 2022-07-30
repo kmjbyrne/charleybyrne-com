@@ -2,7 +2,9 @@
 title: Peanut Butter Cups
 description: "Easy no bake peanut butter cups"
 category: Snacks
-tags: peanut butter
+tags:
+  - peanut
+  - butter
 ---
 
 ## Equipment
