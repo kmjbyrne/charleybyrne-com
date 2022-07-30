@@ -1,6 +1,6 @@
 ---
 title: Peanut Butter Cups
-description: "Easy no bake peanut butter cups"
+description: "Easy no bake peanut butter cups."
 category: Snacks
 tags:
   - peanut
@@ -13,7 +13,7 @@ tags:
 
 ## Ingredients
 
-Serves 10 small or 6-8 larger units
+Serves 10 small or 6-8 larger units.
 
 ## Base
 
