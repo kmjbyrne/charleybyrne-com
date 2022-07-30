@@ -63,7 +63,7 @@ import Vue from "vue";
 // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 export default Vue.extend({
-    transition: "fade",
+    // transition: "fade",
     props: { directory: { type: String, default: () => "" } },
 
     data(): any {
@@ -104,7 +104,7 @@ export default Vue.extend({
 
     head(): any {
         return {
-            title: this.page.title,
+            title: this.page.title || "",
             meta: [
                 {
                     content: this.page.description,
