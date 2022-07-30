@@ -4,6 +4,18 @@
             <div class="column-8">
                 <section class="panel m1 content-body">
                     <h1 id="title">{{ page.title }}</h1>
+                    <!-- <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags">
+                        <NuxtLink :to="'/wiki/category/' + page.category" class="flex-0 flex-inline align-center">
+                            {{ page.category }}
+                        </NuxtLink>
+                    </div> -->
+                    <img :src="page.cover" v-if="page.cover" />
+                    <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags" v-if="page.tags">
+                        <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in page.tags || []" :key="tag">
+                            <span>{{ tag }}</span>
+                            <img class="icon-sm" src="/tag.svg" />
+                        </NuxtLink>
+                    </div>
                     <p>{{ page.description }}</p>
                     <nuxt-content :document="page" />
                 </section>
