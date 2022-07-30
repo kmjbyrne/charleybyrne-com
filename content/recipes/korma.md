@@ -3,11 +3,16 @@ title: Chicken Korma
 category: Indian
 ---
 
+This dish extends the <nuxt-link to="./curry-base">curry base</nuxt-link>
+recipe.
+
+## Ingredients
+
 - 30ml (1 tbsp) ghee
 - 1kg roast chicken - cubed
 - 2 tbsp ground turmeric
 - 2 tbsp vegetable oil
-- 500ml curry base sauce - [see](../curry-base)
+- 500ml curry base sauce -
 - 3 garlic cloves - minced
 - knob of ginger
 - 1 cinnamon stick

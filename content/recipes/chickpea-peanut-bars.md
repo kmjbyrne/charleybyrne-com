@@ -21,7 +21,7 @@ Serves 6-8
 - 1/2 tsp ground cinnamon
 - 1/2 tsp baking powder
 
-## Mixins
+### Mixins
 
 - 1/2 cup (80g) chocolate chips
 - 1/2 cup (80g) walnut pieces
