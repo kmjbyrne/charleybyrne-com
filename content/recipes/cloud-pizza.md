@@ -2,7 +2,9 @@
 title: Cloud Pizza
 description: "Low carb (high protein) alternative pizza"
 category: Pizza
-tags: pizza, low-carb
+tags:
+  - pizza
+  - low-carb
 ---
 
 ## Ingredients

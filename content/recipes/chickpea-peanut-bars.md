@@ -2,7 +2,12 @@
 title: Chickpea Peanut Bars
 description: "Delicious energy bars, chickpea based, perfect for snaking"
 category: Snacks
-tags: protein balls, chickpea, snacks, peanut
+tags:
+  - protein
+  - balls
+  - chickpea
+  - snacks
+  - peanut
 ---
 
 Serves 6-8

@@ -1,6 +1,6 @@
 ---
 title: Easy Mojito
-coverImage: stars.jpg
+cover: /tag.png
 category: Beverages
 ---
 

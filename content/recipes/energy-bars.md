@@ -2,7 +2,11 @@
 title: Peanut Butter Energy Balls
 description: "Delicious energy balls, healthy boost and packed with fiber"
 category: Snacks
-tags: protein balls, snacks, peanut
+tags:
+  - protein
+  - balls
+  - snacks
+  - peanut
 ---
 
 ## Ingredients

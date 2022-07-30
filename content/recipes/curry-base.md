@@ -2,7 +2,10 @@
 title: Curry Base
 description: Indian curry base for use with a variety of dishes
 category: Indian
-tags: indian, curry, base
+tags:
+  - indian
+  - curry
+  - base
 ---
 
 This base acts a simple base (it's not a strong flavour) that other dishes can

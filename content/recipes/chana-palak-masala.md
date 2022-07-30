@@ -2,7 +2,11 @@
 title: Chana Palak Masala
 description: Healthy chana (chickpea) palak (spinach) masala
 category: Indian
-tags: spinach, chickpea, masala, indian
+tags:
+  - spinach
+  - chickpea
+  - masala
+  - indian
 ---
 
 ## Ingredients

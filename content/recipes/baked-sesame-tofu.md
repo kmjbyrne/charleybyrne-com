@@ -16,20 +16,20 @@ category: Chinese
 
 ### Sesame Soy Sauce
 
-- 3 tbsp soy sauce
-- 1 tbsp sesame oil
-- 1 tbsp rice wine vinegar
-- 2 tbsp honey or sugar-free sweetened isomalto-oligosaccharides if low carb
-- 1 tsp minced garlic (add another 1 tsp if you like extra garlic flavour)
-- 1 tsp minced ginger
-- 1/2 tsp dried red chili flakes (add 1 tsp added kick)
-- 100ml water
-- 1/4 tsp xanthan gum
-  - If the sauce is very thin, add another 1/8 tsp xanthan gum at a time, stir
-    and cook for a minute
-  - You can indeed use cornstarch or arrowroot according to direction if not low
-    carb.
-- Handful chopped spring onions
+1. 3 tbsp soy sauce
+2. 1 tbsp sesame oil
+3. 1 tbsp rice wine vinegar
+4. 2 tbsp honey or sugar-free sweetened isomalto-oligosaccharides if low carb
+5. 1 tsp minced garlic (add another 1 tsp if you like extra garlic flavour)
+6. 1 tsp minced ginger
+7. 1/2 tsp dried red chili flakes (add 1 tsp added kick)
+8. 100ml water
+9. 1/4 tsp xanthan gum
+10. Handful chopped spring onions
+
+> If the sauce is very thin, add another 1/8 tsp xanthan gum at a time, stir and
+> cook for a minute. You can indeed use cornstarch or arrowroot according to
+> direction if not low carb.
 
 ## Method
 

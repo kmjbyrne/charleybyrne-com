@@ -2,7 +2,9 @@
 title: Chicken Shawarma
 description: "Easy chicken shawarma"
 category: Chicken
-tags: chicken, shawarma
+tags:
+  - chicken
+  - shawarma
 ---
 
 ## Ingredients

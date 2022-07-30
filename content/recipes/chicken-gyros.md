@@ -1,7 +1,10 @@
 ---
 title: Baked Chicken Gryos
 category: Chicken
-tags: greek,chicken,dinner
+tags:
+  - greek
+  - chicken
+  - dinner
 ---
 
 ## Ingredients
