@@ -16,7 +16,7 @@
                             <img class="icon-sm" src="/tag.svg" />
                         </NuxtLink>
                     </div>
-                    <p>{{ page.description }}</p>
+                    <p v-if="page.description">{{ page.description }}<span v-if="page.description[-1] !== '.'">.</span></p>
                     <nuxt-content :document="page" />
                 </section>
             </div>
