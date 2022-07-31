@@ -22,5 +22,4 @@ tags:
 
 ## Method
 
-1. Mix all ingredients into a bag and leave to marinade for a few hours. Can be
-   left overnight also
+1. Mix all ingredients into a bag and leave to marinade for a few hours. Can be left overnight also

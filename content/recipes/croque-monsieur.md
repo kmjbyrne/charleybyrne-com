@@ -9,11 +9,10 @@ tags:
   - brunch
 ---
 
-Use the simple <nuxt-link to="./sample-bechamel">simple Bechamel</nuxt-link>
-sauce for this recipe.
+Use the simple <nuxt-link to="./sample-bechamel">simple Bechamel</nuxt-link> sauce for this recipe.
 
-This can be easily transformed into a Croque Madame by adding 1 egg sunny side
-up or poached on the top of the sandwich at the end.
+This can be easily transformed into a Croque Madame by adding 1 egg sunny side up or poached on the top of the sandwich
+at the end.
 
 ## Ingredients
 
@@ -38,6 +37,5 @@ Serves 1
 8. Slather 2 tbsp white sauce on top of the bread
 9. Place remaining cheese on top
 10. Grill the sandwich to cheese perfection
-11. (Optional) quickly fry or poach an egg and place it on top once removed from
-    the oven
+11. (Optional) quickly fry or poach an egg and place it on top once removed from the oven
 12. Enjoy!

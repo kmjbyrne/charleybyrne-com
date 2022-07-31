@@ -9,8 +9,7 @@ tags:
 
 ## Ingredients
 
-- 1kg chicken breast or thighs or skinless thighs (breasts are more lean but
-  less flavourful)
+- 1kg chicken breast or thighs or skinless thighs (breasts are more lean but less flavourful)
 - 1/3 (80ml) cup olive oil
 - 1 tsp ginger paste or 3/4 tsp ginger powder
 - 5 garlic cloves
@@ -26,8 +25,7 @@ tags:
 
 ## Method
 
-1. Combine everything together and marinade for at least 4 hours but ideally 24
-   hours
+1. Combine everything together and marinade for at least 4 hours but ideally 24 hours
 2. Preheat oven to 200°C (not on the same day you marinade 😀)
 3. Using a bread pan, tightly pile the chicken into the form
 4. Bake for 45 minutes

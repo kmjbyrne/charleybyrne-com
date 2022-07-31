@@ -10,11 +10,9 @@ How to kill a process running a particular port in Linux.
 
 ## How To
 
-Sometimes when stopping some applications the process will not kill itself
-correctly. This can lead to rogue processes consuming a port resource which will
-prevent your application stopping/starting/re-running. This can sometimes occur
-with some server applications like Tomcat, Python Flask, Python FastAPI or any
-scripts that do not exit gracefully.
+Sometimes when stopping some applications the process will not kill itself correctly. This can lead to rogue processes
+consuming a port resource which will prevent your application stopping/starting/re-running. This can sometimes occur
+with some server applications like Tomcat, Python Flask, Python FastAPI or any scripts that do not exit gracefully.
 
 Example with port 5000:
 
@@ -28,8 +26,7 @@ sudo kill -9 PID
 
 Explained:
 
-`lsof` stands for `LiSt Open Files` which is a Linux command to find out which
-`files` are open in which processes.
+`lsof` stands for `LiSt Open Files` which is a Linux command to find out which `files` are open in which processes.
 
 `-t` shows only the process IDs.
 

@@ -11,11 +11,9 @@ tags:
 
 ## CLI Arguments
 
-Passing arguments or flags is a common way to modify the behaviours of a CLI or
-extend some particular functionality.
+Passing arguments or flags is a common way to modify the behaviours of a CLI or extend some particular functionality.
 
-In this code snippet, upon execution, the script will iterate through everything
-right of the shell argument ($0).
+In this code snippet, upon execution, the script will iterate through everything right of the shell argument ($0).
 
 We have facilitated a `name` and `age` argument.
 

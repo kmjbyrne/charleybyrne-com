@@ -21,6 +21,5 @@ tags:
 
 1. Combine everything, mixing well
 2. Let chill in the fridge for 30 minutes
-3. Form into small balls about the same size as the hole of your thumb and
-   finger whilst gesturing the "OK" sign
+3. Form into small balls about the same size as the hole of your thumb and finger whilst gesturing the "OK" sign
 4. Roll the balls into a spread of oats and chocolate chips

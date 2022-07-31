@@ -19,7 +19,6 @@ category: Dressing
 
 ## Method
 
-Put all ingredients into a food processor / blender and pulse until there are no
-visible large bits of garlic or basil.
+Put all ingredients into a food processor / blender and pulse until there are no visible large bits of garlic or basil.
 
 Enjoy!

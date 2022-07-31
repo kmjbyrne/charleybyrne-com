@@ -2,6 +2,7 @@
 title: Yoghurt Cake
 description: Super light yoghurt cake
 category: Dessert
+cover: ""
 tags:
   - cake
 ---

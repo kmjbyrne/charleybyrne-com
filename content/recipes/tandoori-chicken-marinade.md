@@ -23,12 +23,9 @@ category: Indian
 
 ## Method
 
-1. Heat the oil in a small over medium heat, then stir in the dry ingredients
-   and cook until fragrant
-2. Then mix in the lemon, garlic, ginger and salt. Stir for 20 seconds, remove
-   from heat.
+1. Heat the oil in a small over medium heat, then stir in the dry ingredients and cook until fragrant
+2. Then mix in the lemon, garlic, ginger and salt. Stir for 20 seconds, remove from heat.
 3. Let cool for a minute, then insert into the yoghurt or buttermilk.
-4. Lather the wings with the spice mix and leave the marinade to rest for a few
-   hours. Overnight yields best results
+4. Lather the wings with the spice mix and leave the marinade to rest for a few hours. Overnight yields best results
 5. Preheat oven to 180°C
 6. Once ready, pop the chicken onto a tray and cook for 30-35 minutes
