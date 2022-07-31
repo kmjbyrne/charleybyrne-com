@@ -104,7 +104,16 @@ html {
 
 a {
     color: inherit;
+    color: var(--theme-anchor);
     text-decoration: none;
+}
+
+.tags,
+.toc,
+.navbar {
+    a {
+        color: inherit;
+    }
 }
 
 .light {

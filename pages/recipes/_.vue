@@ -9,14 +9,15 @@
                             {{ page.category }}
                         </NuxtLink>
                     </div> -->
-                    <img :src="page.cover" v-if="page.cover" />
+                    <p>Useful tool: <a href="https://coolconversion.com/cooking-volume-weight" target="blank">https://coolconversion.com/cooking-volume-weight</a></p>
+                    <img :src="page.cover" v-if="page.cover && page.cover !== ''" />
                     <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags" v-if="page.tags">
                         <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in page.tags || []" :key="tag">
                             <span>{{ tag }}</span>
                             <img class="icon-sm" src="/tag.svg" />
                         </NuxtLink>
                     </div>
-                    <p v-if="page.description">{{ page.description }}<span v-if="page.description[-1] !== '.'">.</span></p>
+                    <p v-if="page.description">{{ page.description }}<span v-if="['.', '?', '!'].indexOf(page.description[-1]) >= 0">.</span></p>
                     <nuxt-content :document="page" />
                 </section>
             </div>
@@ -84,6 +85,31 @@ export default Vue.extend({
         this.observer.disconnect();
     },
 
+    head(): any {
+        return {
+            title: this.page.title || "",
+            meta: [
+                {
+                    hid: "description",
+                    name: "description",
+                    content: this.page.description,
+                },
+                {
+                    property: "og:title",
+                    content: `${this.page.title}`,
+                },
+                {
+                    property: "og:description",
+                    content: `${this.page.description}`.replace(/<\/?[^>]+(>|$)/g, ""),
+                },
+                {
+                    property: "og:image",
+                    content: `${this.page.cover}`,
+                },
+            ],
+        };
+    },
+
     mounted(): any {
         Prism.highlightAll();
 
@@ -102,17 +128,6 @@ export default Vue.extend({
         });
     },
 
-    head(): any {
-        return {
-            title: this.page.title || "",
-            meta: [
-                {
-                    content: this.page.description,
-                    description: this.page.description,
-                },
-            ],
-        };
-    },
     methods: {
         calculateReadingTime(text: any) {
             const wpm = 225;

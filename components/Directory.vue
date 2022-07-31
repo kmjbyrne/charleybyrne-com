@@ -102,7 +102,7 @@ export default Vue.extend({
         display: block;
         text-decoration: none;
         color: inherit;
-        line-height: 2rem;
+        // line-height: 2rem;
 
         &:hover {
             color: grey;

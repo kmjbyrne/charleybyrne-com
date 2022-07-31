@@ -8,7 +8,7 @@
         <div class="mobile-only header z100">
             <div class="header__group flex-row">
                 <div class="header__item">
-                    <a class="header__link">Charley Byrne</a>
+                    <span class="header__link">Charley Byrne</span>
                 </div>
                 <div class="header__item mobile-only icons">
                     <img class="header__link" src="/sun.svg" v-if="theme === 'theme-dark'" @click="update('theme', 'theme-light')" />
@@ -25,7 +25,7 @@
             <div class="navbar__inner">
                 <div class="navbar__group">
                     <div class="navbar__item">
-                        <a class="navbar__link">Charley Byrne</a>
+                        <span class="navbar__link">Charley Byrne</span>
                     </div>
                 </div>
                 <div class="navbar__group justify-right">
