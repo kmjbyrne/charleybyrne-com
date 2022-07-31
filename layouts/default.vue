@@ -1,5 +1,6 @@
 <template>
     <div class="wiki" :class="theme">
+        <div id="background"></div>
         <div class="dock z500" :class="{ 'dock--open': dock }">
             <div class="dock__toggle expand expand--center" @click="setDockToggle" :class="{ 'expand--active': dock }"></div>
             <div class="dock__content"></div>
@@ -128,7 +129,6 @@ body,
 .wiki {
     height: 100%;
 }
-
 .icons {
     img {
         width: 1.5rem;
@@ -181,5 +181,19 @@ body,
 
 .theme-light-text {
     color: var(--theme-light-text);
+}
+
+#background {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.wiki #background {
+    background-color: var(--theme-bg);
 }
 </style>
