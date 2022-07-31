@@ -57,6 +57,9 @@ export default Vue.extend({
     },
     methods: {
         comparator(a: any, b: any, key: string): number {
+            if (!b) {
+                return 0;
+            }
             if (a[key].toLowerCase() > b[key].toLowerCase()) {
                 return 1;
             } else if (a[key].toLowerCase() < b[key].toLowerCase()) {
