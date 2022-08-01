@@ -15,7 +15,8 @@ date +%s | sha256sum | base64 | head -c 32 ; echo
 
 ## Using Dev Random
 
-Where `POPULATION` is the characters permitted in the generated password and `SIZE` can be a natural number.
+Where `POPULATION` is the characters permitted in the generated password and
+`SIZE` can be a natural number.
 
 ```bash
 POPULATION="_A-Z-a-z-0-9?!="

@@ -3,13 +3,15 @@ title: Chicken Korma
 category: Indian
 ---
 
-This dish extends the <nuxt-link to="./curry-base">curry base</nuxt-link> recipe.
+This dish extends the <nuxt-link to="./curry-base">curry base</nuxt-link>
+recipe.
 
 ## Ingredients
 
+<!-- - 2 tbsp ground turmeric -->
+
 - 30ml (1 tbsp) ghee
 - 1kg roast chicken - cubed
-- 2 tbsp ground turmeric
 - 2 tbsp vegetable oil
 - 500ml curry base sauce -
 - 3 garlic cloves - minced
@@ -35,6 +37,8 @@ Add the sugar, almonds and coconut to the curry.
 
 Stir and let the curry simmer slowly on low heat for 15 minutes.
 
-Pour in the cream and garam masala. Stir well and let it simmer for another 5 minutes.
+Pour in the cream and garam masala. Stir well and let it simmer for another 5
+minutes.
 
-Garnish with cilantro and serve with rice, naan and your favourite Indian side dishes.
+Garnish with cilantro and serve with rice, naan and your favourite Indian side
+dishes.

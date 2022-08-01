@@ -8,10 +8,12 @@ tags:
   - base
 ---
 
-This base acts a simple base (it's not a strong flavour) that other dishes can overlay.
+This base acts a simple base (it's not a strong flavour) that other dishes can
+overlay.
 
-Most restaurants will use a cup or more of oil when preparing bases. Although this will enhance flavour, it can be made
-a little less calorie dense by just using a little less oil.
+Most restaurants will use a cup or more of oil when preparing bases. Although
+this will enhance flavour, it can be made a little less calorie dense by just
+using a little less oil.
 
 ## Ingredients
 

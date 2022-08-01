@@ -2,6 +2,7 @@
 title: Lasange al Forno
 description: Needs no explanation!
 category: Italian
+cover: /lasagne.jpg
 tags:
   - pasta
   - lasagne
@@ -11,7 +12,7 @@ tags:
 ## Equipment
 
 - Lasange size baking dish
-- 2 saucepans
+- 3 saucepans (1 large)
 - Hunger but patience
 
 ## Ingredients
@@ -43,8 +44,8 @@ tags:
 
 ### Topping
 
-Choose whatever you want here. Just keep in mind cheddar toasts a little different than some cheeses. Use foil if using
-more cheddar to stop it burning.
+Choose whatever you want here. Just keep in mind cheddar toasts a little
+different than some cheeses. Use foil if using more cheddar to stop it burning.
 
 - Grated mozzarella
 - Grated cheddar cheese
@@ -69,25 +70,29 @@ more cheddar to stop it burning.
 1. In one saucepan, heat the milk to a light simmer but do not allow to boil
 2. Whilst heating, in another saucepan, plop the butter in, bring to a sizzle
 3. Whisk in the flour bit by bit forming a roux
-4. Then pour in 50-100ml of milk at a time, whisking vigorously, break up any clumps
+4. Then pour in 50-100ml of milk at a time, whisking vigorously, break up any
+   clumps
 5. Once all milk has been incorporated, keep stirring for about 10-15 minutes
 6. Done when it has enough viscosity to remain stuck to the back of a spoon
 7. Turn off the heat and leave aside for later
 
 ## Assembly
 
-You can break pasta sheets into smaller segments to finish off awkward edges. You can place sheets into the dish as its
-empty to get a sense of how it will fit. Just make a slice in the sheet when you know your measurements and it should
-snap easily where sliced.
+You can break pasta sheets into smaller segments to finish off awkward edges.
+You can place sheets into the dish as its empty to get a sense of how it will
+fit. Just make a slice in the sheet when you know your measurements and it
+should snap easily where sliced.
 
-Not all baking dishes are the same size, neither all pasta sheets. My Pyrex dish tapers in top to bottom slightly so
-this is a bit hit and miss.
+Not all baking dishes are the same size, neither all pasta sheets. My Pyrex dish
+tapers in top to bottom slightly so this is a bit hit and miss.
 
 1. Preheat oven to 180°C
-2. Slightly grease your dish with a little olive oil (prevents the sections catching to the edges later)
+2. Slightly grease your dish with a little olive oil (prevents the sections
+   catching to the edges later)
 3. First layer should be a ragu
 4. Next place a layer of pasta sheets, getting as close to edges as possible
-5. Next a layer of white sauce (can put some parmesan at this point but not required)
+5. Next a layer of white sauce (can put some parmesan at this point but not
+   required)
 6. Next a layer of ragu
 7. Next another layer of pasta sheets
 8. Next a layer of white sauce

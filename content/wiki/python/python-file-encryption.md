@@ -1,6 +1,8 @@
 ---
 title: Python File Encryption
-description: Encrypt and decrypt local files on your file system using the python cryptography library
+description:
+  Encrypt and decrypt local files on your file system using the python
+  cryptography library
 category: Python
 tags:
   - python
@@ -10,14 +12,17 @@ tags:
 
 ## Purpose
 
-Sure, you may use one of the many, many file encryption offerings out there. [GPG Tools](https://gnupg.org/) for
-example, is a reliable and brilliant tool. Most Linux users will be familiar with GPG to some degree. You should not
+Sure, you may use one of the many, many file encryption offerings out there.
+[GPG Tools](https://gnupg.org/) for example, is a reliable and brilliant tool.
+Most Linux users will be familiar with GPG to some degree. You should not
 reinvent the wheel here.
 
-However, it is useful to understand some basic principles around cryptographic operations. Surface level education about
-how tools work helps to broker a deeper sense of trust with tools and the behaviours they exhibit to users.
+However, it is useful to understand some basic principles around cryptographic
+operations. Surface level education about how tools work helps to broker a
+deeper sense of trust with tools and the behaviours they exhibit to users.
 
-The following is a very rudimentary python script to encrypt and decrypt files using Fernet.
+The following is a very rudimentary python script to encrypt and decrypt files
+using Fernet.
 
 It accepts three arguments `encrypt | decrypt`, `path to file` and `key`.
 
@@ -85,8 +90,8 @@ else:
 
 ## Additional Installation
 
-For this quick utility, I have located this script with a bash helper. This will dependent how your PATH is setup. My
-.zshrc adds `.scripts` to path.
+For this quick utility, I have located this script with a bash helper. This will
+dependent how your PATH is setup. My .zshrc adds `.scripts` to path.
 
 ```shell
 export PATH=$HOME/.scripts:$PATH

@@ -28,6 +28,7 @@ category: Bread
 
 ## Method
 
-1. Add honey, yeast and warm water to a container. Leave to rest for about 10 minutes until frothy and smelling like a
-   brewery.
-2. Mix flours, flax, gluten powder, psyllium, xanthan gum, baking, salt, cream of tartar and ginger to a bowl and mix.
+1. Add honey, yeast and warm water to a container. Leave to rest for about 10
+   minutes until frothy and smelling like a brewery.
+2. Mix flours, flax, gluten powder, psyllium, xanthan gum, baking, salt, cream
+   of tartar and ginger to a bowl and mix.

@@ -23,9 +23,12 @@ category: Chinese
 1. Whisk eggs in a bowl
 2. Dice up the chicken fillets to desired chunk size
 3. Dip the chicken into the egg mix and ensure its evenly soaking for 30 minutes
-4. Put the almond powder, whey protein, five spice, salt, pepper and garlic onto a large plate and mix well
-5. Carefully dredge the chicken through the flour mixture piece by piece and make sure each piece is well coated
+4. Put the almond powder, whey protein, five spice, salt, pepper and garlic onto
+   a large plate and mix well
+5. Carefully dredge the chicken through the flour mixture piece by piece and
+   make sure each piece is well coated
 6. Once all chicken is done, leave for about 30 minutes
 7. Start heating up your oil in a deep pan or deep fryer
-8. Deep fry the chicken pieces in about 3 batches or depending on the size of your cooking container. In my case, it was
-   a medium sized saucepan so space was an issue
+8. Deep fry the chicken pieces in about 3 batches or depending on the size of
+   your cooking container. In my case, it was a medium sized saucepan so space
+   was an issue

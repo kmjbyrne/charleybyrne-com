@@ -2,6 +2,7 @@
 title: Chickpea Peanut Bars
 description: "Delicious energy bars, chickpea based, perfect for snaking"
 category: Snacks
+cover: /chickpea-peanut-bars.jpg
 tags:
   - protein
   - balls
@@ -10,9 +11,14 @@ tags:
   - peanut
 ---
 
-Serves 6-8
+## Equipment
+
+- 1 baking dish
+- Food processor/mixer
 
 ## Ingredients
+
+Serves 6-8
 
 ### Base
 

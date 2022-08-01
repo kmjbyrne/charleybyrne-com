@@ -25,12 +25,13 @@ Serves 4 mini-sides
 
 ## Method
 
-1. Rinse the rice through cold water well (if using a bath, change water as needed) and then drain
+1. Rinse the rice through cold water well (if using a bath, change water as
+   needed) and then drain
 2. Add the ghee to a saucepan over medium heat
 3. Add the spices and gently toast them until you get an aromatic lift
 4. Add the rice to the pain, stir well to ensure rice is well coated
-5. Add the water, bring to the boil. Once boiling, reduce heat to low and put the lid on (do not remove the lid for any
-   reason)
+5. Add the water, bring to the boil. Once boiling, reduce heat to low and put
+   the lid on (do not remove the lid for any reason)
 6. Let simmer for about 9-11 minutes
 7. At the left of the pan add green food colouring, add the right add red
 8. Remove from heat and let stand for 5 minutes

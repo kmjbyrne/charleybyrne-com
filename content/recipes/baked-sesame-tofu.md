@@ -27,20 +27,25 @@ category: Chinese
 9. 1/4 tsp xanthan gum
 10. Handful chopped spring onions
 
-> If the sauce is very thin, add another 1/8 tsp xanthan gum at a time, stir and cook for a minute. You can indeed use
-> cornstarch or arrowroot according to direction if not low carb.
+> If the sauce is very thin, add another 1/8 tsp xanthan gum at a time, stir and
+> cook for a minute. You can indeed use cornstarch or arrowroot according to
+> direction if not low carb.
 
 ## Method
 
 1. Preheat oven to 180°C
-2. Chop the tofu block into cubes and mix with the sesame oil, soy sauce, salt and optional MSG to a bowl
-3. Space out the tofu on baking paper and bake for about 35 minutes. Add 7-10 minutes if you like crispier tofu
-4. Meanwhile, add the second soy sauce, sesame oil, rice vinegar, garlic, ginger, honey to a pan and cook on medium for
-   1 or 2 minutes
+2. Chop the tofu block into cubes and mix with the sesame oil, soy sauce, salt
+   and optional MSG to a bowl
+3. Space out the tofu on baking paper and bake for about 35 minutes. Add 7-10
+   minutes if you like crispier tofu
+4. Meanwhile, add the second soy sauce, sesame oil, rice vinegar, garlic,
+   ginger, honey to a pan and cook on medium for 1 or 2 minutes
 5. Add the dried chili flakes
-6. Add the water and thickening agent (xantham or preferred alternative) and stir
+6. Add the water and thickening agent (xantham or preferred alternative) and
+   stir
 7. When the sauce thickens, remove from heat
-8. When the tofu is finished, add it to the sauce and mix together on low heat for 1 or 2 minutes
+8. When the tofu is finished, add it to the sauce and mix together on low heat
+   for 1 or 2 minutes
 9. Garnish with spring onions
 
 Enjoy!

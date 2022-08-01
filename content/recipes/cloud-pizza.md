@@ -24,9 +24,11 @@ tags:
 1. Preheat oven to 150°C
 2. Mix passata with seasonings in a bowl
 3. Separate egg white and yolk from the egg
-4. In a bowl, pour in the egg whites, add in the lemon juice (or tartar) and whisk until stiff peaks form
+4. In a bowl, pour in the egg whites, add in the lemon juice (or tartar) and
+   whisk until stiff peaks form
 5. In another bowl, mix the yolk and cream cheese
-6. Mix the a bit of the whites into the yolk at a time ensuring not to over mix here
+6. Mix the a bit of the whites into the yolk at a time ensuring not to over mix
+   here
 7. Lay out some baking paper and pour the mixture on it, forming a pizza shape
 8. Bake for 25 minutes
 9. Remove from the oven to let cool for 5 minutes

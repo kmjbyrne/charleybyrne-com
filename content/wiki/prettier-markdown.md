@@ -10,10 +10,12 @@ tags:
 
 ## Prettier Config
 
-Prettier needs the `proseWrap` key set to enforce strict column width formatting with Markdown.
+Prettier needs the `proseWrap` key set to enforce strict column width formatting
+with Markdown.
 
-Additionally, having `tabWidth` as 4 (which is for some languages a rational default) will case prettier to indent lists
-by 4 also. This will create MD050 violations.
+Additionally, having `tabWidth` as 4 (which is for some languages a rational
+default) will case prettier to indent lists by 4 also. This will create MD050
+violations.
 
 ```js
 {
