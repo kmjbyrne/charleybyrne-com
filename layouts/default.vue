@@ -106,7 +106,7 @@ export default Vue.extend({
     --snapatoms-panel-bg: #1a1a1a;
     --snapatoms-panel-fg: inherit;
 
-    background-color: var(--theme-bg, white);
+    // background-color: var(--theme-bg, white);
     color: var(--theme-fg, black);
     // font-size: 16px;
     padding: 0;

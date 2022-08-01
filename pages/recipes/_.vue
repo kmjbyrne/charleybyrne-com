@@ -10,7 +10,7 @@
                         </NuxtLink>
                     </div> -->
                     <p>Useful tool: <a href="https://coolconversion.com/cooking-volume-weight" target="blank">https://coolconversion.com/cooking-volume-weight</a></p>
-                    <img :src="page.cover" v-if="page.cover && page.cover !== ''" />
+                    <img class="cover" :src="page.cover" v-if="page.cover && page.cover !== ''" :alt="page.cover" />
                     <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags" v-if="page.tags">
                         <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in page.tags || []" :key="tag">
                             <span>{{ tag }}</span>
@@ -73,7 +73,7 @@ export default Vue.extend({
             observer: null,
             observerOptions: {
                 root: this.$refs.nuxtContent,
-                threshold: 1,
+                threshold: 0,
             },
             toc: false,
             error: false,
@@ -113,7 +113,7 @@ export default Vue.extend({
     mounted(): any {
         Prism.highlightAll();
 
-        this.observer = new IntersectionObserver((entries) => {
+        this.observer = new IntersectionObserver((entries): any => {
             entries.forEach((entry) => {
                 const id = entry.target.getAttribute("id");
                 if (entry.isIntersecting) {
@@ -121,27 +121,26 @@ export default Vue.extend({
                 }
             });
         }, this.observerOptions);
-
         // Track all sections that have an `id` applied
-        document.querySelectorAll(".nuxt-content h2[id], .nuxt-content h3[id] .nuxt-content h1[id]").forEach((section) => {
+        document.querySelectorAll(".nuxt-content h2[id], .nuxt-content h1[id]").forEach((section): any => {
             this.observer.observe(section);
         });
     },
 
     methods: {
-        calculateReadingTime(text: any) {
+        calculateReadingTime(text: any): number {
             const wpm = 225;
             const words = text.trim().split(/\s+/).length;
             const time = Math.ceil(words / wpm);
             return time;
         },
-        toggle(key: string) {
+        toggle(key: string): void {
             // @ts-ignore
             this[key] = !this[key];
         },
     },
 
-    async asyncData({ $content, route }) {
+    async asyncData({ $content, route }: { $content: any; route: any }): Promise<any> {
         let url = route.fullPath.slice(1);
         if (url.endsWith("/")) {
             url = url.slice(0, url.length - 2);

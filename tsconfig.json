@@ -13,6 +13,7 @@
         "noImplicitThis": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
+        "noImplicitAny": true,
         "baseUrl": ".",
         "paths": {
             "~/*": ["./*"],

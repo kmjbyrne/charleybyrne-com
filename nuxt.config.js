@@ -20,6 +20,10 @@ export default {
         ],
     },
 
+    generate: {
+        routes: ["/r"],
+    },
+
     script: [{ src: "@snapatoms/ui" }],
 
     css: [
