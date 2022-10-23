@@ -67,40 +67,11 @@ html {
     }
 }
 
-// .content-body {
-//     line-height: 1.7;
-//     text-align: justify;
-
-//     ul,
-//     ol {
-//         padding-left: 1.5rem;
-//         // margin: 0;
-//         box-sizing: border-box;
-
-//         @include below-large {
-//             padding: 0;
-//             list-style: none;
-//             li {
-//                 margin: 1rem 0;
-//                 padding: 1rem 0;
-//                 // border-top: 1px solid var(--theme-fg-fade);
-//                 border-bottom: 1px solid var(--theme-fg-fade);
-//                 ol,
-//                 ul {
-//                     border-left: 2px solid #ccc;
-//                     li {
-//                         padding: 0 0 0 0.5rem;
-//                         margin-left: 0.5rem;
-//                         border-bottom: none;
-//                     }
-//                 }
-//             }
-//             li::before {
-//                 content: "";
-//             }
-//         }
-//     }
-// }
+.content-body {
+    ul li ul {
+        padding-left: 1rem;
+    }
+}
 
 a {
     color: inherit;
@@ -108,10 +79,32 @@ a {
     text-decoration: none;
 }
 
-.cover {
+.text-faded {
+    color: #848484;
+}
+
+.section {
+    margin: 1rem 0;
+}
+
+%_cover {
     width: 100%;
     box-shadow: 0px 0px 3px #646464;
     border: 0.01rem solid #7b7b7b;
+}
+
+.cover {
+    @extend %_cover;
+}
+
+.cover-sm {
+    @extend %_cover;
+    max-height: 12rem;
+}
+
+.cover-svg {
+    // width: 100%;
+    max-height: 5rem;
 }
 
 .tags,
@@ -128,7 +121,7 @@ a {
 
 .icon-sm {
     width: 1rem;
-    margin: 0 1rem;
+    margin: 0 0.25rem;
 }
 
 h1 {
@@ -141,4 +134,22 @@ h4,
 h5,
 h6 {
     font-size: 1.1rem;
+}
+
+.hover-fade:hover {
+    color: rgb(118, 118, 118);
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0mm;
+    }
+    .no-print {
+        display: none !important;
+    }
+
+    .print-container {
+        border-bottom: 2px dashed #ccc;
+    }
 }
