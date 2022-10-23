@@ -1,6 +1,7 @@
 ---
-title: Chickpea Peanut Bars
-description: "Delicious energy bars, chickpea based, perfect for snaking"
+title: Chickpeanut Bars
+description:
+  Delicious energy bars, chickpea and peanut based, perfect for snaking
 category: Snacks
 cover: /chickpea-peanut-bars.jpg
 tags:

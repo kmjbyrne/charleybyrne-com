@@ -18,7 +18,7 @@ tags:
 - 1/2 tsp cayenne pepper
 - 1 tsp minced garlic
 - 1 sheet of nori
-- 1 watermelon
+- Half of a 5lb (~2.2kg) watermelon (sliced into steaks)
 
 ## Method
 

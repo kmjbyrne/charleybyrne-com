@@ -2,7 +2,7 @@
 title: Eggs En Cocotte
 description: Baked eggs
 category: Eggs
-cover: /eggs2.jpg
+cover: /eggs-en-cocotte.jpg
 tags:
   - brunch
   - eggs

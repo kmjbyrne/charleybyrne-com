@@ -1,17 +1,24 @@
 ---
 title: Special Caesar Salad
-description: "Special Caesar salad recipe including some Mediterranean flavours"
+description: Special Caesar salad recipe including some Mediterranean flavours
 category: Salad
-draft: true
+partial: true
 ---
 
-While I do love a traditional Caesar salad, too often particularly in the summer
-months I find myself growing numb to the flavours. As a result, through trial
-and experience of salad bars I whip up this to break the monotony of the salad
-world.
+A slight twist on the classic salad.
 
 ## Ingredients
 
-## Method
+- 100g cor or romaine lettuce or whichever fresh leafy greens you want
+- Handful of chopped sun dried tomatoes
+- Handful of croutons
+- 30g grated parmesan
+- 4 tbsp store bought Caesar dressing OR use dressing below
 
-...
+### Dressing
+
+- 1 garlic clove, minced
+- 2 tbsp fish sauce
+- Handful of grated parmesan
+- 5 tbsp mayonnaise
+- 1 tbsp lemon juice
