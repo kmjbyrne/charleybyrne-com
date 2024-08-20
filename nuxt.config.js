@@ -1,11 +1,8 @@
 require("dotenv").config();
 
 export default {
-    // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     target: "static",
     strict: false,
-    // Global CSS: https://go.nuxtjs.dev/config-css
-
     publicRuntimeConfig: {
         baseURL: process.env.BASE_URL || "https://nuxtjs.org",
         title: process.env.APP_TITLE || "Charley Byrne",
@@ -14,46 +11,61 @@ export default {
     head: {
         meta: [
             { charset: "utf-8" },
-            { name: "viewport", content: "width=device-width, initial-scale=1" },
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1",
+            },
             // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-            { hid: "description", name: "description", content: "Meta description" },
+            {
+                hid: "description",
+                name: "description",
+                content: "Charley Byrne",
+            },
+        ],
+        link: [
+            { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+            {
+                rel: "stylesheet",
+                href: "https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css",
+            },
         ],
     },
 
-    generate: {
-        routes: ["/r"],
-    },
+    buildModules: [
+        // https://go.nuxtjs.dev/typescript
+        "@nuxt/typescript-build",
+        // https://go.nuxtjs.dev/stylelint
+        // "@nuxtjs/stylelint-module",
+        "@nuxtjs/style-resources",
+        "@/modules/generator",
+    ],
+
+    generate: {},
 
     script: [{ src: "@snapatoms/ui" }],
 
+    styleResources: {
+        scss: ["~assets/_mixins.scss", "@snapatoms/ui/styles/helpers.scss"],
+    },
+
     css: [
         {
-            src: "~/assets/global.scss",
+            src: "~assets/main.scss",
             lang: "scss",
         },
         {
-            src: "@snapatoms/ui/dist/snapatoms.css",
+            src: "@snapatoms/ui/dist/bundle.css",
             lang: "css",
         },
     ],
 
     components: true,
-
-    content: {
-        markdown: {
-            prism: {
-                theme: "prism-themes/themes/prism-vsc-dark-plus.css",
-            },
-        },
+    sitemap: {
+        hostname: "https://charleybyrne.com",
+        gzip: true,
     },
-
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: [
-        // https://go.nuxtjs.dev/axios
-        "@nuxtjs/axios",
-        // https://go.nuxtjs.dev/content
-        "@nuxt/content",
-    ],
+    modules: ["@nuxt/content", "nuxt-mermaid-string", "@nuxtjs/sitemap"],
 
     // PWA module configuration: https://go.nuxtjs.dev/pwa
     pwa: {
@@ -62,11 +74,19 @@ export default {
         },
     },
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: [
-        // https://go.nuxtjs.dev/typescript
-        "@nuxt/typescript-build",
-        // https://go.nuxtjs.dev/stylelint
-        // "@nuxtjs/stylelint-module",
-    ],
-    plugins: ["~/plugins/prism.js"],
+    build: {
+        postcss: {},
+    },
+
+    plugins: ["~/plugins/prism.js", "~/plugins/prototypes.js", "~/plugins/disqus.js"],
+
+    content: {
+        markdown: {
+            prism: {
+                theme: "prism-themes/themes/prism-vsc-dark-plus.css",
+            },
+            remarkPlugins: ["remark-math"],
+            rehypePlugins: ["rehype-katex"],
+        },
+    },
 };

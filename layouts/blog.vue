@@ -3,7 +3,10 @@
         <SimpleNav>
             <SimpleNavGroup>
                 <SimpleNavItem>
-                    <SimpleNavText link="">Charley Byrne <span class="light">Blog</span></SimpleNavText>
+                    <SimpleNavText link="/">
+                        Charley Byrne
+                        <span class="light">Blog</span>
+                    </SimpleNavText>
                 </SimpleNavItem>
                 <SimpleNavItem :hidden="true">
                     <SimpleNavLink link="/about">About</SimpleNavLink>
