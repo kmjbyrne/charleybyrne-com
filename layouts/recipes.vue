@@ -36,16 +36,16 @@
                 </div>
             </div>
             <!-- <div class="header__group flex-row icons">
-                <div class="header__item mobile-only">
-                    <img class="header__link" src="/sun.svg" v-if="theme === 'theme-dark'" @click="update('theme', 'theme-light')" />
-                    <img class="header__link" src="/moon.svg" v-if="theme === 'theme-light'" @click="update('theme', 'theme-dark')" />
-                </div>
-            </div> -->
+              <div class="header__item mobile-only">
+                  <img class="header__link" src="/sun.svg" v-if="theme === 'theme-dark'" @click="update('theme', 'theme-light')" />
+                  <img class="header__link" src="/moon.svg" v-if="theme === 'theme-light'" @click="update('theme', 'theme-dark')" />
+              </div>
+          </div> -->
             <!-- <div class="p1 flex justify-right align-center mobile-only">
-                <div class="hamburger" :class="navbar ? 'hamburger--active' : ''" @click="set('navbar')">
-                    <span></span>
-                </div>
-            </div> -->
+              <div class="hamburger" :class="navbar ? 'hamburger--active' : ''" @click="set('navbar')">
+                  <span></span>
+              </div>
+          </div> -->
         </header>
         <div class="navbar z200 mobile-h100 mobile-fixed-top-0 mobile-charcoal no-print" :class="navbar ? 'mobile-right-left-50pc' : 'mobile-fixed-right-m100pc'">
             <div class="navbar__inner">

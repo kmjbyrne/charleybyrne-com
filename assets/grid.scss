@@ -1,74 +1,133 @@
-// @import "mixins";
+.w-container {
+    display: block;
+    margin: auto;
+    max-width: 1336px;
+}
 
-// .container {
-//     margin: 0 auto;
-//     position: relative;
-//     width: auto;
+.w-container {
+    display: block;
+    margin: auto;
+    max-width: 1240px;
+}
 
-//     @include responsive("xl", "min") {
-//         max-width: 1344px;
-//     }
-// }
+.f-container {
+    max-width: none !important;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 100%;
+}
 
-// .container-sm {
-//     margin: 0 auto;
-//     position: relative;
-//     width: auto;
+.x-container {
+    display: block;
+    margin: auto;
+    max-width: 1024px;
+}
 
-//     @include responsive("large", "min") {
-//         max-width: $small;
-//     }
-// }
+@include below-large {
+    .m-container {
+        padding: 0 1rem;
+    }
+}
 
-// @include responsive("large", "min") {
-//     .sticky-view {
-//         position: sticky;
-//         top: 4.5rem;
-//         overflow: auto;
-//     }
+:root {
+    --grids-spacing-col: 1rem;
+    --grids-spacing-row: 1rem;
+    --grids-block-spacing: 1rem;
+    --grids-spacing: var(--grids-spacing-row) var(--grids-spacing-col);
+}
 
-//     .columns {
-//         display: flex;
-//     }
-// }
+%grid {
+    display: block;
+    box-sizing: inherit;
+    padding: 0 0.75rem;
+}
 
-// .column {
-//     display: block;
-//     flex-basis: 0;
-//     flex-grow: 1;
-//     flex-shrink: 1;
-//     padding: 0 0.75rem;
-//     box-sizing: inherit;
-// }
+.grid {
+    @extend %grid;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
 
-// // create columns
-// @for $i from 1 through 12 {
-//     $percentage: calc($i / 12);
-//     .column-#{$i} {
-//         display: block;
-//         // flex-basis: 0;
-//         // flex-grow: 1;
-//         // flex-shrink: 1;
-//         padding: 0 0.75rem;
+// create columns
+@for $i from 1 through 12 {
+    $percentage: calc($i / 12);
+    .grid-#{$i} {
+        @extend %grid;
+        flex: none;
+        padding: 0 0.75rem;
+        @include responsive("large", "min") {
+            width: percentage($percentage);
+        }
+    }
+}
 
-//         // flex: 0 0 auto;
-//         flex: 1;
+.grids {
+    box-sizing: border-box;
+    margin: 0 -0.75rem;
 
-//         @include responsive("large", "min") {
-//             max-width: percentage($percentage);
-//             width: percentage($percentage);
-//         }
-//     }
-// }
+    &--multiline {
+        flex-wrap: wrap;
+    }
 
-// .columns {
-//     &--tight > * {
-//         margin: 0;
-//         padding: 0 !important;
-//     }
-// }
+    @include responsive("large", "min") {
+        display: flex;
+        justify-content: space-between;
+    }
 
-// .row {
-//     display: flex;
-//     flex-direction: row;
-// }
+    &--tight {
+        margin: 0;
+        *[class*="grid-"],
+        .grid {
+            // for padding we use positive result of calc
+            padding: 0;
+        }
+    }
+}
+
+.desktop {
+    @include responsive("large", "min") {
+        &--grid {
+            display: block;
+            box-sizing: inherit;
+            padding: 0 0.75rem;
+        }
+
+        @for $i from 1 through 8 {
+            &--gap-#{$i} {
+                // first define the spacing size
+                $space: calc($i * 0.25);
+                > *[class*="grid-"],
+                > .grid {
+                    // for padding we use positive result of calc
+                    padding: 0 $space + rem;
+                }
+                // for margin we use negative result of calc to create boundaries
+                margin: 0 calc($space * -1) + rem;
+            }
+        }
+    }
+}
+
+.boxes {
+    // margin: 5rem 0;
+    padding: 5rem 0;
+    border: 3px solid #ccc;
+}
+
+.box {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    justify-content: center;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.is-tight {
+    > * {
+        padding: 0;
+    }
+}
