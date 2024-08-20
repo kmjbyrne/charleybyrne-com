@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# Input args
+# 1 -> name of S3 bucket
+# 2 -> name of domain name (CloudFront target)
+
+npm run generate
+# sync public website
+# aws s3 rm s3://BUCKET --recursive
+aws s3 sync ./dist "s3://${1}" --delete
+# ensure invalidation is run too
+bin/cloudfront-invalidation "${2}"

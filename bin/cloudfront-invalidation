@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export AWS_PAGER=""
+echo "Attemping with CloudFront invalidation as: $(aws sts get-caller-identity | jq -r .Arn)"
+DISTRO_ID=$(aws cloudfront list-distributions | jq -r ".DistributionList.Items | map(select(.Aliases.Items[] == \"${1}\")) | .[].Id")
+echo "Distribution ID: ${DISTRO_ID}"
+echo "Calling invalidation now..."
+aws cloudfront create-invalidation --distribution-id ${DISTRO_ID} --paths "/*" --profile personal

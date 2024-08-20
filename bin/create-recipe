@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import sys
+
+category, name, *_ = sys.argv[1:]
+
+print(category, name, *_)
+
+TEMPLATE="""---
+title: {}
+description: {}
+category: {}
+image: ADD
+tags:
+  - ADD
+---
+
+ADD
+"""
+
+file = f"content/recipes/{category.lower()}/{name.lower().replace(' ', '-')}.md"
+with open(file, "w") as fs:
+    fs.write(TEMPLATE.format(name, name, category))
