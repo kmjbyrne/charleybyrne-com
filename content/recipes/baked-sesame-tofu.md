@@ -2,30 +2,26 @@
 title: Baked Sesame Tofu
 description: Delicious baked tofu in a mildly sweet sauce
 category: Chinese
+keto: true
+data:
+  ingredients:
+    - 500g block of firm tofu. I used Tahoe Super
+    - 2 tsp sesame oil
+    - 2 tbsp soy sauce
+    - 0.5 tsp MSG (optional)
+    - Salt to taste but use less if using MSG
+  sesame soy sauce:
+    - 3 tbsp soy sauce
+    - 1 tbsp sesame oil
+    - 1 tbsp rice wine vinegar
+    - 2 tbsp honey or sugar-free sweetened isomalto-oligosaccharides if low carb
+    - 1 tsp minced garlic (add another 1 tsp if you like extra garlic flavour)
+    - 1 tsp minced ginger
+    - 1/2 tsp dried red chili flakes (add 1 tsp added kick)
+    - 100ml water
+    - 1/4 tsp xanthan gum
+    - Handful chopped spring onions
 ---
-
-## Ingredients
-
-### Baked Tofu
-
-- 500g block of firm tofu. I used Tahoe Super
-- 2 tsp sesame oil
-- 2 tbsp soy sauce
-- 0.5 tsp MSG (optional)
-- Salt to taste but use less if using MSG
-
-### Sesame Soy Sauce
-
-1. 3 tbsp soy sauce
-2. 1 tbsp sesame oil
-3. 1 tbsp rice wine vinegar
-4. 2 tbsp honey or sugar-free sweetened isomalto-oligosaccharides if low carb
-5. 1 tsp minced garlic (add another 1 tsp if you like extra garlic flavour)
-6. 1 tsp minced ginger
-7. 1/2 tsp dried red chili flakes (add 1 tsp added kick)
-8. 100ml water
-9. 1/4 tsp xanthan gum
-10. Handful chopped spring onions
 
 > If the sauce is very thin, add another 1/8 tsp xanthan gum at a time, stir and
 > cook for a minute. You can indeed use cornstarch or arrowroot according to

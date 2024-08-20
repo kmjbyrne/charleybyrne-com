@@ -10,7 +10,7 @@ tags:
   - brunch
 ---
 
-Use the simple <nuxt-link to="./sample-bechamel">simple Bechamel</nuxt-link>
+Use the simple <nuxt-link to="./sauces/bechamel">simple Bechamel</nuxt-link>
 sauce for this recipe.
 
 This can be easily transformed into a Croque Madame by adding 1 egg sunny side

@@ -1,5 +1,6 @@
 ---
 title: Indian Chicken Wing Marinade
+description: Chicken wing rub from selection of eastern spices
 category: Seasoning
 ---
 

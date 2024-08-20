@@ -3,6 +3,7 @@ title: Special Caesar Salad
 description: Special Caesar salad recipe including some Mediterranean flavours
 category: Salad
 partial: true
+keto: true
 ---
 
 A slight twist on the classic salad.

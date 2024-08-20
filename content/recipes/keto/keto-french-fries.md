@@ -4,14 +4,15 @@ category: Sides
 tags:
   - fries
   - sides
+  - keto
 ---
 
 ## Ingredients
 
 - 1 cup (100g) almond flour
 - 1/2 cup (50g) coconut flour
-- 6 tsp xanthan gum
-- 1 cup boiling water
+- 6 tsp (20g) xanthan gum
+- 1 cup (210ml) boiling water
 - 1/2 tsp salt
 - 1/2 tsp pepper
 - 1/2 garlic powder (optional)

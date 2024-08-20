@@ -4,10 +4,31 @@ description:
   Salsa to add a kick to burritos, bowls or just splattered over anything
   really!
 category: Sauces
+keto: true
 tags:
   - sauces
   - hot
   - mexican
+nutrition:
+  servings: 8
+  calories: 44
+  fat:
+    saturated: 0
+    mono: 0
+    poly: 0
+    trans: 0
+  cholesterol: 0
+  sodium: 6
+  potassium: 291
+  carbs:
+    fiber: 2
+    sugars: 4
+  protein: 1
+  vitamins:
+    a: 2
+    c: 44
+    calcium: 2
+    iron: 2
 ---
 
 ## Ingredients

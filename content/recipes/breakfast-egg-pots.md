@@ -1,5 +1,6 @@
 ---
 title: Baked Breakfast Egg Pots
+description: Delicious egg pots, ideal for breakfast or brunch
 category: Breakfast
 ---
 

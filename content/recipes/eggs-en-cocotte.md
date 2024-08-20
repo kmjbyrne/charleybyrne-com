@@ -1,6 +1,6 @@
 ---
 title: Eggs En Cocotte
-description: Baked eggs
+description: Simple eggs en cocotte (baked eggs)
 category: Eggs
 cover: /eggs-en-cocotte.jpg
 tags:
