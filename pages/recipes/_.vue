@@ -1,57 +1,78 @@
 <template>
-    <div class="columns columns--tight">
-        <template>
-            <div class="column-8">
-                <section class="panel m1 content-body">
-                    <h1 id="title">{{ page.title }}</h1>
-                    <!-- <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags">
-                        <NuxtLink :to="'/wiki/category/' + page.category" class="flex-0 flex-inline align-center">
-                            {{ page.category }}
-                        </NuxtLink>
-                    </div> -->
-                    <p>Useful tool: <a href="https://coolconversion.com/cooking-volume-weight" target="blank">https://coolconversion.com/cooking-volume-weight</a></p>
-                    <img class="cover" :src="page.cover" v-if="page.cover && page.cover !== ''" :alt="page.cover" />
-                    <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags" v-if="page.tags">
-                        <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in page.tags || []" :key="tag">
+    <div class="row">
+        <div class="col-12 print-container">
+            <section class="content-body print-content">
+                <h1 id="title">{{ page.title }}</h1>
+
+                <p v-if="page.description">
+                    {{ page.description }}
+                </p>
+
+                <div class="block theme-light-text m-tb-1 flex-wrap justify-left tags" v-if="page.tags">
+                    <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in page.tags || []" :key="tag">
+                        <CenterAlign>
                             <span>{{ tag }}</span>
                             <img class="icon-sm" src="/tag.svg" />
-                        </NuxtLink>
-                    </div>
-                    <p v-if="page.description">{{ page.description }}<span v-if="['.', '?', '!'].indexOf(page.description[-1]) >= 0">.</span></p>
-                    <nuxt-content :document="page" />
-                </section>
-            </div>
-            <div class="column-4">
-                <div
-                    class="drawer-mobile mobile-z200 desktop-p1 drawer-mobile--right mobile-sticky-top-0"
-                    :class="toc ? 'mobile-left-auto z200 handle--active drawer-mobile--open' : ''"
-                >
-                    <div class="handle z500 handle--right-edge mobile-abs-top-20pc mobile-only" @click="toggle('toc')">
-                        <img class="s2" src="/document.svg" />
-                    </div>
+                        </CenterAlign>
+                    </NuxtLink>
+                </div>
 
-                    <div class="drawer-mobile__content">
-                        <section class="panel">
-                            <h3>On This Page</h3>
-                            <nav class="toc">
-                                <ul class="nav-items">
-                                    <li v-for="item in page.toc" :key="item.id">
-                                        <a
-                                            class="link"
-                                            :href="'#' + item.id"
-                                            :class="{
-                                                'toc--in-view': item.id === currentlyActiveToc,
-                                            }"
-                                            >{{ item.text }}</a
-                                        >
-                                    </li>
-                                </ul>
-                            </nav>
-                        </section>
+                <p v-for="m in messages" :key="m">{{ m }}</p>
+
+                <template>
+                    <span>Category</span>
+                    <span></span>
+                    <NuxtLink :to="'/recipes/category/' + page.category.toLowerCase()">/ {{ page.category }}</NuxtLink>
+                </template>
+
+                <div class="row" v-if="page.cover && page.cover !== ''">
+                    <div class="col">
+                        <img class="cover" :src="page.cover" :alt="page.cover" />
                     </div>
                 </div>
-            </div>
-        </template>
+
+                <div class="icon-row">
+                    <img class="icon-md" v-if="page.dietary?.sugar" src="/icons/sugar-free.svg" alt="Sugar free" />
+                    <img class="icon-md" v-if="page.dietary?.dairy" src="/icons/dairy-free.svg" alt="Dairy free" />
+                    <img class="icon-md" v-if="page.dietary?.gluten" src="/icons/gluten-free.svg" alt="Gluten free" />
+                    <img class="icon-md" v-if="page.dietary?.vegan" src="/icons/vegan.svg" alt="Vegan friendly " />
+
+                    <template v-if="page.keto || page.dietary?.keto">
+                        <img class="icon-md" src="/checked.svg" alt="Keto friendly" />
+                        <span>Keto friendly</span>
+                    </template>
+                </div>
+
+                <div class="row" v-if="false">
+                    <div class="col">
+                        <div class="flex gap-1rem">
+                            <!-- <ShareBadge :url="self" text=""></ShareBadge> -->
+                            <!-- <ShareBadge :url="self" type="mailto"></ShareBadge> -->
+                            <!-- <ShareBadge
+                                :url="self"
+                                type="facebook"
+                            ></ShareBadge> -->
+                            <!-- <ShareBadge
+                                :url="self"
+                                type="whatsapp"
+                            ></ShareBadge> -->
+                            <!-- <ShareBadge :url="self" type="telegram"></ShareBadge> -->
+                        </div>
+                    </div>
+                </div>
+
+                <article class="nuxt-content">
+                    <Accordion :title="key" v-for="key in Object.keys(page.data || {}) || []" :key="key">
+                        <ul>
+                            <li v-for="elem in page.data[key]" :key="elem">
+                                <span>{{ elem }}</span>
+                            </li>
+                        </ul>
+                    </Accordion>
+                    <nuxt-content :document="page"></nuxt-content>
+                </article>
+            </section>
+        </div>
     </div>
 </template>
 
@@ -64,11 +85,13 @@ import Vue from "vue";
 // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 export default Vue.extend({
-    // transition: "fade",
+    layout: "recipes",
     props: { directory: { type: String, default: () => "" } },
 
     data(): any {
         return {
+            hostname: "",
+            messages: [],
             currentlyActiveToc: "",
             observer: null,
             observerOptions: {
@@ -86,6 +109,8 @@ export default Vue.extend({
     },
 
     head(): any {
+        const icons = ["", "/spinach.png", "/favicon.ico", "/vegetable.png", "/food-delivery.svg"];
+        const favicon = icons[Math.floor(Math.random() * icons.length - 1) + 1];
         return {
             title: this.page.title || "",
             meta: [
@@ -107,7 +132,14 @@ export default Vue.extend({
                     content: `${this.page.cover}`,
                 },
             ],
+            link: [{ rel: "icon", type: "image/x-icon", href: favicon }],
         };
+    },
+
+    computed: {
+        self(): string {
+            return `${this.hostname}${this.$route.fullPath}`;
+        },
     },
 
     mounted(): any {
@@ -128,6 +160,33 @@ export default Vue.extend({
     },
 
     methods: {
+        async hasNavigatorShare() {
+            if (process.client) {
+                // return navigator !== undefined;
+                return true;
+            }
+            return false;
+        },
+        getPageUrl(): string {
+            return `${location.protocol}//${location.host}${this.page.path}`;
+        },
+        async copyLink() {
+            await navigator.clipboard.writeText(this.getPageUrl());
+
+            this.messages.push("Link copied to clipboard!");
+            setTimeout(() => {
+                this.messages = [];
+            }, 2000);
+        },
+        async shareLink() {
+            if (navigator.share) {
+                await navigator.share({
+                    title: this.page.title,
+                    text: this.page.description,
+                    url: this.getPageUrl(),
+                });
+            }
+        },
         calculateReadingTime(text: any): number {
             const wpm = 225;
             const words = text.trim().split(/\s+/).length;
@@ -140,20 +199,59 @@ export default Vue.extend({
         },
     },
 
-    async asyncData({ $content, route }: { $content: any; route: any }): Promise<any> {
-        let url = route.fullPath.slice(1);
+    async asyncData({ $content, route }: { $content: any; route: any; req: any }): Promise<any> {
+        let url = route.path;
         if (url.endsWith("/")) {
-            url = url.slice(0, url.length - 2);
+            url = url.replace(/\/$/, "");
         }
-        const page = await $content(route.fullPath.slice(1), {
+
+        const page = await $content(url, {
             deep: true,
         }).fetch();
+
         return { page };
     },
 });
 </script>
 
 <style lang="scss" scoped>
+table.nutrition {
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid black;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.nutrition th {
+    background-color: transparent;
+    padding: 3px;
+    border: 0;
+    font-family: Arial;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.nutrition td {
+    padding: 3px;
+    font-family: Arial;
+    font-size: x-small;
+    border: 0;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
 .toc {
     ul li,
     ul {

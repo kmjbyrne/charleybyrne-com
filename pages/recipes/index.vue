@@ -1,12 +1,20 @@
 <template>
-    <section class="panel m1 p1">
+    <section class="">
         <h1>Recipes</h1>
         <input class="search" type="text" v-model="search" placeholder="Search recipes" />
-        <div class="" v-for="r in filteredDirectory" :key="r.slug">
-            <NuxtLink :to="r.slug">{{ r.title }}</NuxtLink>
-            <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in r.tags || []" :key="tag">
-                <span>{{ tag }}</span>
-                <img class="icon-sm" src="/tag.svg" />
+
+        <div class="row is-multiline">
+            <NuxtLink :to="r.path" class="col-4 hover-fade" v-for="r in filteredDirectory" :key="r.slug">
+                <RecipeItem :name="r.title" :desc="r.description" :image="r.image" fallback="/recipe.svg">
+                    <p>
+                        <NuxtLink :to="'/recipes/tag/' + tag" v-for="tag in r.tags || []" :key="tag">
+                            <CenterAlign>
+                                <span>{{ tag }}</span>
+                                <img class="icon-sm" src="/tag.svg" />
+                            </CenterAlign>
+                        </NuxtLink>
+                    </p>
+                </RecipeItem>
             </NuxtLink>
         </div>
     </section>
@@ -66,7 +74,9 @@ export default Vue.extend({
         return {
             recipes: await $content("/recipes", {
                 deep: true,
-            }).fetch(),
+            })
+                .without(["content"])
+                .fetch(),
         };
     },
 });
@@ -84,5 +94,11 @@ export default Vue.extend({
 }
 .search {
     font-style: italic;
+}
+
+.recipe {
+    border-bottom: 1px dashed #ccc;
+    padding: 0.5rem 0;
+    // border-top: 1px dashed #ccc;
 }
 </style>

@@ -1,5 +1,3 @@
 <template>
-    <section>
-        <p>Technical Wiki</p>
-    </section>
+    <section></section>
 </template>

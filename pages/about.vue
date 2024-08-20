@@ -1,6 +1,6 @@
 <template>
     <section class="container-sm">
-        <div class="columns">
+        <div class="grids">
             <div class="column">
                 <ContentBlock :title="page.title" :key="$route.fullPath">
                     <nuxt-content :document="page" />

@@ -1,19 +1,21 @@
 <template>
-    <main class="container-fluid">
+    <main class="wiki">
         <div class="handle z500 handle--right-edge fixed-right mobile-fixed-bottom-10pc mobile-only" @click="toggle('open')">
             <img class="s2" src="/folder.svg" />
         </div>
-        <div class="columns columns--tight">
-            <div class="column-3 font-075rem">
-                <div class="drawer-mobile p1 mobile-fixed-left mobile-z100 mobile-fixed-top mobile-h100 mobile-sticky-top-0" :class="open ? 'drawer-mobile--open' : ''">
-                    <div class="panel" v-show="files">
+        <div class="row">
+            <div class="col-3 drawer-desktop" :class="setStyles()">
+                <div class="p2">
+                    <template v-if="files">
                         <h3>Directory</h3>
                         <Directory :directory="files"></Directory>
-                    </div>
+                    </template>
                 </div>
             </div>
-            <div class="column-9">
-                <NuxtChild :key="$route.path"></NuxtChild>
+            <div class="col-9">
+                <div class="p2">
+                    <NuxtChild :key="$route.path"></NuxtChild>
+                </div>
             </div>
         </div>
     </main>
@@ -33,6 +35,9 @@ export default Vue.extend({
         toggle(key: string) {
             this[key] = !this[key];
         },
+        setStyles() {
+            return this.open ? "drawer-mobile--open panel" : "";
+        },
     },
 
     data(): any {
@@ -48,9 +53,6 @@ export default Vue.extend({
     async asyncData({ route, $content }) {
         const parent = route.path.split("/").slice(1, 2).pop()?.toString() || "";
         const files = await $content(parent, { deep: true }).without(["body"]).fetch();
-        // const categories = files.reduce((acc: any, e: any) => {
-        //     return { ...acc, [e.category]: [] };
-        // });
 
         return {
             parent,
@@ -62,8 +64,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import "@snapatoms/ui/styles/helpers";
-
 @include from-large {
     .mobile-sticky-top-0 {
         position: sticky;
