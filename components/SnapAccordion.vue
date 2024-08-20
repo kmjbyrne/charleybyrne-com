@@ -20,8 +20,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/mixins";
-
 .accordion {
     overflow: hidden;
 

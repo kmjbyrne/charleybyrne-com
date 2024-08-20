@@ -1,11 +1,17 @@
 <template>
     <section class="directory">
-        <div class="columns">
+        <div>
             <input class="search" type="text" v-model="search" placeholder="Search files" />
         </div>
+        <select class="search" type="text" v-model="categorySearch">
+            <option :selected="true" value="">Select Category</option>
+            <option v-for="category in getCategories" :key="category" :value="category">{{ category }}</option>
+            <option :selected="true" value="">-- None --</option>
+        </select>
+
         <ul class="directory-items">
-            <li v-for="item in filteredDirectory" :key="item.slug">
-                <nuxt-link class="link" :to="getPath(item)">
+            <li v-for="item in filteredDirectory" :key="item.path">
+                <nuxt-link class="link" :to="item.path">
                     <span>{{ item.title }}</span>
                     <span class="side-text">[{{ item.category }}]</span>
                 </nuxt-link>
@@ -25,11 +31,18 @@ export default Vue.extend({
     data(): any {
         return {
             search: "",
+            categorySearch: "",
             categories: undefined,
             category: "default",
         };
     },
     computed: {
+        getCategories: function () {
+            const categories = this.directory.map((file: any) => {
+                return file.category;
+            });
+            return Array.from(new Set(categories)).sort();
+        },
         filteredDirectory: function (): Array<any> {
             // @ts-ignore
             let files: any[] = this["directory"];
@@ -52,7 +65,13 @@ export default Vue.extend({
                 );
             }
             // @ts-ignore
-            return files.sort((a: any, b: any) => this["comparator"](a, b, "title"));
+            const preCategory = files.sort((a: any, b: any) => this["comparator"](a, b, "title"));
+            if (this.categorySearch !== "") {
+                return preCategory.filter((file: any) => {
+                    return file.category === this.categorySearch;
+                });
+            }
+            return preCategory;
         },
     },
     methods: {
