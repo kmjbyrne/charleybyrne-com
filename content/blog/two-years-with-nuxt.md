@@ -1,15 +1,22 @@
 ---
 title: Framework Paralysis to NuxtJS
+description: Navigating the big sea
 category: Technology
+image: /content/lisbon-sea.jpg
+tags:
+  - nuxtjs
+  - frontend
+  - ui
+  - client
 ---
-
-## Pathways Anew
 
 Roughly this time two years ago I decided to take NuxtJS (aka Nuxt) for a spin
 on a pro-bono community project. I really had no preconceptions about Nuxt other
 than it made scratching my itch of component based development easy. My aim here
 has always been modularity in mind and leveraging the use of components and
 plugins as standard, for both code reuse and consistency.
+
+## Pathways Anew
 
 I took the plunge and ultimately moved from an Angular world so there was indeed
 a few uphill marches to exercise the **ah for f\*\*k sake** sing song of
