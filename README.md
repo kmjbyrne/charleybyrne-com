@@ -1,40 +1,75 @@
-# Charley Byrne Nuxt Website
+# Nuxt Content Starter
 
-Homepage: [charleybyrne.com](https://charleybyrne.com)
+Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
 
-Wiki pages: [charleybyrne.com/wiki](https://charleybyrne.com/wiki)
+## Setup
 
-Recipes pages: [charleybyrne.com/recipes](https://charleybyrne.com/recipes)
+Make sure to install dependencies:
 
-Build with <3 using Vue meta-framework [NuxtJS](https://nuxtjs.org/).
+```bash
+# npm
+npm install
 
-## Structure
+# pnpm
+pnpm install
 
-```tree
-components/
-    # presentation / logical components
-content/
-    # all the website markdown articles
-    # content/wiki corresponds to pages/wiki, for example.
-pages/
-    # contains site directory structure
-plugins/
-    # build plugins
-layouts/
-    # general top level layouts
-static/
-    # images, svg, etc... accessible from /
-assets/
-    # other stuff, typically SCSS files
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## Deployment
+## Development Server
 
-Deployed on S3 via CDK. Code to link soon.
+Start the development server on `http://localhost:3000`:
 
-## Roadmap
+```bash
+# npm
+npm run dev
 
-- 2022
-  - Q3
-    - Link CDK code once polished
-    - CI/CD from Git to auto deploy changes to S3
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

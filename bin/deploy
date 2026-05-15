@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STACK_NAME="CharleyByrneSiteStack"
+REGION="eu-west-1"
+
+echo "==> Building site..."
+npm run generate
+
+echo "==> Looking up stack outputs..."
+BUCKET_NAME=$(aws cloudformation describe-stacks \
+  --stack-name "$STACK_NAME" \
+  --region "$REGION" \
+  --query "Stacks[0].Outputs[?OutputKey=='BucketName'].OutputValue" \
+  --output text)
+
+DIST_ID=$(aws cloudformation describe-stacks \
+  --stack-name "$STACK_NAME" \
+  --region "$REGION" \
+  --query "Stacks[0].Outputs[?OutputKey=='DistributionId'].OutputValue" \
+  --output text)
+
+echo "==> Bucket: $BUCKET_NAME"
+echo "==> Distribution: $DIST_ID"
+
+echo "==> Syncing to S3..."
+aws s3 sync .output/public "s3://$BUCKET_NAME" --delete
+
+echo "==> Invalidating CloudFront..."
+aws cloudfront create-invalidation \
+  --distribution-id "$DIST_ID" \
+  --paths "/*" \
+  --query "Invalidation.Id" \
+  --output text
+
+echo "==> Done."

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:3100/)",
+      "Bash(curl -s http://localhost:3100/blog/an-antidote-to-speed)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
