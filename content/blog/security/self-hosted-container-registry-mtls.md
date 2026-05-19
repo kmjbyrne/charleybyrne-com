@@ -38,8 +38,19 @@ against a private certificate authority. If the certificate is valid, the
 request is forwarded to the registry, which then checks `htpasswd` credentials
 via HTTP Basic Auth. Both checks must pass before any image data moves.
 
-::mermaid{graph="sequenceDiagram\n    participant Client as Docker Client\n    participant NGINX as NGINX (TLS + mTLS)\n    participant Registry as registry:5000\n\n    Client->>NGINX: TLS handshake + client cert\n    NGINX->>NGINX: Verify client cert against CA\n    NGINX->>Registry: Proxy HTTP request\n    Registry->>Registry: Verify htpasswd credentials\n    Registry-->>NGINX: 200 OK / image data\n    NGINX-->>Client: Response"}
-::
+```mermaid
+sequenceDiagram
+    participant Client as Docker Client
+    participant NGINX as NGINX (TLS + mTLS)
+    participant Registry as registry:5000
+
+    Client->>NGINX: TLS handshake + client cert
+    NGINX->>NGINX: Verify client cert against CA
+    NGINX->>Registry: Proxy HTTP request
+    Registry->>Registry: Verify htpasswd credentials
+    Registry-->>NGINX: 200 OK / image data
+    NGINX-->>Client: Response
+```
 
 ## Prerequisites
 
@@ -84,7 +95,6 @@ variables. NGINX sits in front and proxies HTTPS traffic to the registry's
 internal HTTP port.
 
 ```yaml
-# docker-compose.yml
 services:
   registry:
     image: registry:latest
@@ -129,8 +139,7 @@ build time, we use an entrypoint script that installs the utility and generates
 the password file from environment variables at startup. This keeps credentials
 out of your image layers and lets you manage them through a `.env` file.
 
-```sh
-# .env
+```ini
 REGISTRY_USER=deployer
 REGISTRY_PASSWORD=your-strong-password-here
 ```
@@ -139,7 +148,6 @@ The entrypoint script reads these variables and creates the `htpasswd` file
 before handing off to the registry's default entrypoint.
 
 ```bash
-# bin/registry-entrypoint
 #!/usr/bin/env bash
 
 set -euo pipefail
@@ -177,7 +185,6 @@ The NGINX configuration proxies HTTPS traffic to the registry. Replace
 to match your setup.
 
 ```nginx
-# nginx/registry.conf
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -360,10 +367,11 @@ isolates the TLS layer from Docker's credential handling.
 curl -s https://registry.example.com/v2/
 
 # With a client cert (should get 401, meaning mTLS passed)
+CERT_DIR="/etc/docker/certs.d/registry.example.com"
 curl -s \
-    --cert /etc/docker/certs.d/registry.example.com/client.cert \
-    --key /etc/docker/certs.d/registry.example.com/client.key \
-    --cacert /etc/docker/certs.d/registry.example.com/ca.crt \
+    --cert $CERT_DIR/client.cert \
+    --key $CERT_DIR/client.key \
+    --cacert $CERT_DIR/ca.crt \
     https://registry.example.com/v2/
 ```
 
@@ -402,21 +410,19 @@ docker push registry.example.com/test/hello:v1
 
 ### Verifying the Push
 
-Query the registry API to confirm the image landed.
+Query the registry API to confirm the image landed. To avoid repeating the mTLS
+flags on every curl invocation, set up a few variables first.
 
 ```sh
+CERT_DIR="/etc/docker/certs.d/registry.example.com"
+CURL_MTLS="--cert $CERT_DIR/client.cert --key $CERT_DIR/client.key --cacert $CERT_DIR/ca.crt"
+
 # List all repositories
-curl -s -u deployer:your-password \
-    --cert /etc/docker/certs.d/registry.example.com/client.cert \
-    --key /etc/docker/certs.d/registry.example.com/client.key \
-    --cacert /etc/docker/certs.d/registry.example.com/ca.crt \
+curl -s -u deployer:your-password $CURL_MTLS \
     https://registry.example.com/v2/_catalog
 
 # List tags for the test image
-curl -s -u deployer:your-password \
-    --cert /etc/docker/certs.d/registry.example.com/client.cert \
-    --key /etc/docker/certs.d/registry.example.com/client.key \
-    --cacert /etc/docker/certs.d/registry.example.com/ca.crt \
+curl -s -u deployer:your-password $CURL_MTLS \
     https://registry.example.com/v2/test/hello/tags/list
 ```
 

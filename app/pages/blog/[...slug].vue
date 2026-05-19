@@ -3,10 +3,11 @@ const route = useRoute()
 const slugSegments = Array.isArray(route.params.slug)
   ? route.params.slug
   : [route.params.slug]
-const path = `/blog/${slugSegments.join('/')}`
+const slug = slugSegments[slugSegments.length - 1]
+const path = `/blog/${slug}`
 
 const { data: post } = await useAsyncData('post-' + path, () =>
-  usePublicPosts(queryCollection('posts')).path(path).first(),
+  usePublicPosts(queryCollection('posts')).where('path', 'LIKE', `%/${slug}`).first(),
 )
 
 if (!post.value) {
