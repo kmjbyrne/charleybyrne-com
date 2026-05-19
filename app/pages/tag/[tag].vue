@@ -8,7 +8,7 @@ useSeoMeta({
 })
 
 const { data: posts } = await useAsyncData('tag-' + tag, () =>
-  queryCollection('posts')
+  usePublicPosts(queryCollection('posts'))
     .where('tags', 'LIKE', `%${tag}%`)
     .order('date', 'DESC')
     .all(),

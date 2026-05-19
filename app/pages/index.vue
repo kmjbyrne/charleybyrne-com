@@ -5,7 +5,7 @@ useSeoMeta({
 })
 
 const { data: posts } = await useAsyncData('posts', () =>
-  queryCollection('posts')
+  usePublicPosts(queryCollection('posts'))
     .order('date', 'DESC')
     .all(),
 )

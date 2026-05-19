@@ -8,7 +8,7 @@ useHead({
 const MAX_PINNED = 4
 
 const { data: nav } = await useAsyncData('nav-categories', async () => {
-  const posts = await queryCollection('posts').select('category').all()
+  const posts = await usePublicPosts(queryCollection('posts')).select('category').all()
 
   const counts = posts.reduce<Record<string, number>>((acc, p) => {
     const cat = p.category

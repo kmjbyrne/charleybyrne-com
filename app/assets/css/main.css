@@ -25,3 +25,16 @@
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
+
+.prose :not(pre) > code {
+  color: #c0392b;
+  background-color: #fdf2f2;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark .prose :not(pre) > code {
+  color: #e74c3c;
+  background-color: #2d1f1f;
+}

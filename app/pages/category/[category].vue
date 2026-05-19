@@ -9,7 +9,7 @@ useSeoMeta({
 })
 
 const { data: posts } = await useAsyncData('category-' + category, () =>
-  queryCollection('posts')
+  usePublicPosts(queryCollection('posts'))
     .where('category', '=', displayName)
     .order('date', 'DESC')
     .all(),

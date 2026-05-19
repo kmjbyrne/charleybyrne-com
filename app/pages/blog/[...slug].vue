@@ -1,9 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
-const path = `/blog/${route.params.slug}`
+const slugSegments = Array.isArray(route.params.slug)
+  ? route.params.slug
+  : [route.params.slug]
+const path = `/blog/${slugSegments.join('/')}`
 
 const { data: post } = await useAsyncData('post-' + path, () =>
-  queryCollection('posts').path(path).first(),
+  usePublicPosts(queryCollection('posts')).path(path).first(),
 )
 
 if (!post.value) {
@@ -11,18 +14,18 @@ if (!post.value) {
 }
 
 const { data: allPosts } = await useAsyncData('all-posts-nav', () =>
-  queryCollection('posts').order('date', 'DESC').select('path', 'title', 'date').all(),
+  usePublicPosts(queryCollection('posts')).order('date', 'DESC').select('path', 'title', 'date').all(),
 )
 
 const { data: allTags } = await useAsyncData('all-tags', async () => {
-  const posts = await queryCollection('posts').select('tags').all()
+  const posts = await usePublicPosts(queryCollection('posts')).select('tags').all()
   const counts = posts.reduce<Record<string, number>>((acc, p) => {
     for (const tag of p.tags ?? []) {
       acc[tag] = (acc[tag] ?? 0) + 1
     }
     return acc
   }, {})
-  return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([tag]) => tag)
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([tag, count]) => ({ name: tag, count }))
 })
 
 const currentIndex = computed(() =>
@@ -75,6 +78,18 @@ const readingTime = computed(() => {
   return `${minutes} min read`
 })
 
+onMounted(() => {
+  window.disqus_config = function () {
+    this.page.url = window.location.href
+    this.page.identifier = slugSegments.join('/')
+  }
+
+  const s = document.createElement('script')
+  s.src = 'https://charleybyrne-com.disqus.com/embed.js'
+  s.setAttribute('data-timestamp', String(+new Date()))
+  ;(document.head || document.body).appendChild(s)
+})
+
 const scrollProgress = ref(0)
 const tocOpen = ref(false)
 const activeId = ref<string>('')
@@ -108,22 +123,6 @@ onMounted(() => {
     onUnmounted(() => observer.disconnect())
   }
 
-  const script = document.createElement('script')
-  script.src = 'https://giscus.app/client.js'
-  script.setAttribute('data-repo', 'kmjbyrne/charleybyrne-com')
-  script.setAttribute('data-repo-id', 'R_kgDOHUjgUQ')
-  script.setAttribute('data-category', 'General')
-  script.setAttribute('data-category-id', 'DIC_kwDOHUjgUc4C9HlN')
-  script.setAttribute('data-mapping', 'url')
-  script.setAttribute('data-strict', '0')
-  script.setAttribute('data-reactions-enabled', '1')
-  script.setAttribute('data-emit-metadata', '0')
-  script.setAttribute('data-input-position', 'bottom')
-  script.setAttribute('data-theme', 'preferred_color_scheme')
-  script.setAttribute('data-lang', 'en')
-  script.setAttribute('crossorigin', 'anonymous')
-  script.async = true
-  document.body.appendChild(script)
 })
 
 useSeoMeta({
@@ -304,9 +303,7 @@ function formatDate(dateStr: string): string {
             </div>
           </div>
 
-          <div class="mt-16 max-w-2xl border-t border-default pt-10">
-            <div class="giscus" />
-          </div>
+          <div v-if="false" id="disqus_thread" class="mt-16 max-w-2xl border-t border-default pt-10" />
         </article>
 
         <aside class="hidden lg:block py-12">
@@ -357,18 +354,20 @@ function formatDate(dateStr: string): string {
             </div>
 
             <div v-if="allTags?.length" class="flex flex-col gap-3">
-              <p class="text-highlighted text-xs font-semibold uppercase tracking-widest">
+              <p class="text-highlighted flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest">
+                <UIcon name="i-lucide-tag" class="size-3.5" />
                 Tags
               </p>
               <div class="flex flex-wrap gap-2">
                 <NuxtLink
                   v-for="tag in allTags"
-                  :key="tag"
-                  :to="`/tag/${tag}`"
+                  :key="tag.name"
+                  :to="`/tag/${tag.name}`"
                   class="text-dimmed hover:text-default border border-default hover:border-accented rounded px-2 py-0.5 text-xs transition-colors"
-                  :class="{ 'border-accented text-default': post.tags?.includes(tag) }"
+                  :class="{ 'border-accented text-default': post.tags?.includes(tag.name) }"
                 >
-                  {{ tag }}
+                  {{ tag.name }}
+                  <span class="text-dimmed/60">({{ tag.count }})</span>
                 </NuxtLink>
               </div>
             </div>

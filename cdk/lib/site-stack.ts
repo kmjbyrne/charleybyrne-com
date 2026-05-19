@@ -37,6 +37,24 @@ export class SiteStack extends cdk.Stack {
       }),
     })
 
+    // Appends trailing slash to bare paths so S3 serves index.html
+    // directly instead of returning a 302 redirect
+    const trailingSlashFunction = new cloudfront.Function(this, 'TrailingSlashFunction', {
+      code: cloudfront.FunctionCode.fromInline(`
+function handler(event) {
+  var request = event.request;
+  var uri = request.uri;
+  if (uri.endsWith('/')) {
+    request.uri += 'index.html';
+  } else if (!uri.includes('.')) {
+    request.uri += '/index.html';
+  }
+  return request;
+}
+`),
+      runtime: cloudfront.FunctionRuntime.JS_2_0,
+    })
+
     const distribution = new cloudfront.CloudFrontWebDistribution(this, 'SiteDistribution', {
       viewerCertificate: cloudfront.ViewerCertificate.fromAcmCertificate(cert, {
         aliases: [config.domainName],
@@ -49,7 +67,17 @@ export class SiteStack extends cdk.Stack {
             domainName: siteBucket.bucketWebsiteDomainName,
             originProtocolPolicy: cloudfront.OriginProtocolPolicy.HTTP_ONLY,
           },
-          behaviors: [{ isDefaultBehavior: true }],
+          behaviors: [
+            {
+              isDefaultBehavior: true,
+              functionAssociations: [
+                {
+                  function: trailingSlashFunction,
+                  eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+                },
+              ],
+            },
+          ],
         },
       ],
       errorConfigurations: [

@@ -1,0 +1,32 @@
+{
+  "ltex": {
+    "language": "en-GB",
+    "dictionary": {
+      "en-GB": [
+        "Erling",
+        "Ellingsen",
+        "Silverlight",
+        "FedRAMP",
+        "WebAuthn",
+        "Okta",
+        "Entra",
+        "TenantMember",
+        "FastAPI",
+        "SQLModel",
+        "bcrypt",
+        "PKCE",
+        "RBAC",
+        "Nuxt",
+        "monorepo",
+        "iss",
+        "aud",
+        "quickstart",
+        "cargo-culting",
+        "OrganisationApplication",
+        "OrganisationRole",
+        "DevLawrence",
+        "WorkOS"
+      ]
+    }
+  }
+}

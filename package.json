@@ -10,11 +10,13 @@
     "deploy": "./bin/deploy"
   },
   "dependencies": {
+    "@giscus/vue": "^3.1.1",
     "@iconify-json/simple-icons": "^1.2.82",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/content": "^3.13.0",
     "@nuxt/eslint": "^1.15.2",
     "@nuxt/ui": "^4.7.1",
+    "@tailwindcss/typography": "^0.5.0-alpha.3",
     "better-sqlite3": "^12.10.0",
     "eslint": "^9.39.4",
     "mermaid": "^11.15.0",

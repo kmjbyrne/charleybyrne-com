@@ -9,6 +9,7 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         date: z.string(),
+        public: z.boolean().default(true),
         category: z.string().optional(),
         image: z.string().optional(),
         imageCredit: z.string().optional(),
