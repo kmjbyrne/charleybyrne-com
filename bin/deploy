@@ -23,7 +23,24 @@ DIST_ID=$(aws cloudformation describe-stacks \
 echo "==> Bucket: $BUCKET_NAME"
 echo "==> Distribution: $DIST_ID"
 
-echo "==> Syncing to S3..."
+# Staged sync closes the mid-deploy window where cached HTML references
+# assets that are not uploaded yet (or already deleted). Hashed assets land
+# first with immutable caching, HTML and payloads switch over second with
+# no-cache so browsers always revalidate, and stale files are pruned last.
+echo "==> Syncing hashed assets (immutable)..."
+aws s3 sync .output/public "s3://$BUCKET_NAME" \
+  --exclude "*.html" \
+  --exclude "*_payload.json" \
+  --cache-control "public,max-age=31536000,immutable"
+
+echo "==> Syncing HTML and payloads (no-cache)..."
+aws s3 sync .output/public "s3://$BUCKET_NAME" \
+  --exclude "*" \
+  --include "*.html" \
+  --include "*_payload.json" \
+  --cache-control "no-cache"
+
+echo "==> Pruning removed files..."
 aws s3 sync .output/public "s3://$BUCKET_NAME" --delete
 
 echo "==> Invalidating CloudFront..."
