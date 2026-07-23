@@ -5,20 +5,21 @@ description:
   look at where it actually comes from, exploring the parallels in taste across
   audio, food and software.
 date: 2026-07-12
-edited: 2026-07-12
+edited: 2026-07-23
 image: /images/blog/2026/water-droplet.jpg
 imageCredit: Natalia Gutnik
 imageCreditUrl: https://www.instagram.com/__dust__in__the__wind__?igsh=MTEwd28zZ2Nta3IwNQ==
 category: Technology
-tags: [ai, productivity, learning, reflection]
+tags: [ai, learning, reflection]
 ---
 
 A while back, I came upon a few
 [clips](https://www.youtube.com/watch?v=jg1WUOxY6Cg) from
 ["60 Minutes"](https://www.cbsnews.com/60-minutes/) where American record
-producer Rick Rubin was being interviewed by Anderson Cooper. In the interview,
-Rubin self-attests to having _no_ technical abilities _whatsoever_. He states
-himself that he knows nothing about music!
+producer Rick Rubin was being interviewed by
+[Anderson Cooper](https://en.wikipedia.org/wiki/Anderson_Cooper). In the
+interview, Rubin self-attests to having _no_ technical abilities _whatsoever_.
+He states himself that he knows nothing about music!
 
 > I know what I like and what I don't like. I am decisive about what I like and
 > what I don't like.
@@ -32,12 +33,16 @@ Cooper, quite reasonably, pressed him on it:
 >
 > Rick Rubin
 
-_An aside, if you are unfamiliar with Rick's work: Slayer, Tom Petty, System of
-a Down, Johnny Cash, Slipknot, Linkin Park, the Red Hot Chili Peppers. The range
-*is* the point. I grew up listening to a good number of those records, all
-shaped by the same pair of ears, unbeknownst to me at the time of course.
+<!-- prettier-ignore-start -->
+::CollapsibleAside{title="An aside, if you are unfamiliar with Rick's work"}
+Slayer, Tom Petty, System of a Down, Johnny Cash, Slipknot, Linkin Park, the
+Red Hot Chili Peppers. The range *is* the point. I grew up listening to a good
+number of those records, all shaped by the same pair of ears, unbeknownst to me
+at the time of course.
 [The full discography](https://en.wikipedia.org/wiki/Rick_Rubin_production_discography)
-is a rabbit hole worth falling into._
+is a rabbit hole worth falling into.
+::
+<!-- prettier-ignore-end -->
 
 ## Paid For Taste
 
@@ -110,28 +115,16 @@ Our palates are schooled by more of that collision than anyone before us, which
 is why "good taste" refuses to hold still long enough to be pinned to a wall.
 Each new contrast quietly re-teaches the palate that will judge the next one.
 
-The neuroscience of it is stranger than the food metaphor lets on. Some of what
-we call taste is just handed to you at birth. The bitter-taste receptor gene
-[TAS2R38](https://www.nature.com/articles/s41598-019-54604-1) decides, with a
-couple of letters of DNA, whether coffee, kale and tonic water read as
-pleasantly bracing or frankly offensive.
-
-Around a quarter of people are "super tasters" who feel bitterness far more
-intensely than the rest of us, and you will not talk them out of it. So the wine
-drinker reaching for something sweet might not be lazy or untrained at all. They
-could just be running different hardware.
-
-But most of what we call taste never occurs on the tongue at all. The raw
-signals are assembled into _flavour_ further up, in the
-[orbitofrontal cortex](https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2011.00078/full),
-where taste and smell and texture and even the mere appearance of a thing are
-bound together by sheer repetition. And that region does more than record a
-flavour. It appraises it and assigns it a worth. Pair a scent with a reward
-often enough and the neurons learn to anticipate the reward; withdraw the reward
-and, in time, they learn the new bargain instead. The apparatus that decides
-what you like, in other words, is engineered to be rewritten. Nobody issued you
-a palate. You have been cultivating one your whole life, every time you sit down
-to eat.
+Some of it is just hardware. Around a quarter of people are "super tasters"
+whose bitter-taste receptor gene
+[TAS2R38](https://www.nature.com/articles/s41598-019-54604-1) makes coffee and
+tonic water far harsher than the rest of us feel them, and you will not talk
+them out of it, so the wine drinker reaching for something sweet might not be
+lazy or untrained at all. They could just be running different hardware. The
+rest of it gets written by exposure: pair a flavour with enough repetition and
+the machinery that decides whether you like it quietly rewrites itself, and it
+will rewrite again the moment the bargain changes. Nobody issued you a palate.
+You have been cultivating one your whole life, every time you sit down to eat.
 
 And the palate you school at dinner does not have the courtesy to stay at the
 table. The same faculty, forever appraising each new thing against everything it
@@ -172,11 +165,28 @@ Well, me being myself, I thought "huh", that is a rather profound statement...
 Neurological fireworks commence!
 
 The models are trained on everything already made; they interpolate the past.
-Taste of their own they have none, only the aggregate taste of everyone at once,
-averaged into a smooth and agreeable nothing. What they furnish instead is
-speed, and speed unaccompanied is not the same as taste. Given time, it is your
-judgement that decides whether the output was worth anything. I dwell on this at
-greater length in [this article](/blog/an-antidote-to-speed).
+There is a half truth to this, and the interesting part is the half that's
+missing. Because Rubin looks backwards too, thousands of records deep, and the
+whole first half of this essay is backward training of one sort or another. A
+palate is only the food already eaten. So the gaze cannot be the thing that
+separates us from the machine, since we are all of us looking the same way. The
+half it misses is what the looking produces.
+
+Rubin's thousands of records forged one particular pair of ears that had made
+their mind up about things, while the model swallowed every palate at once and
+committed to none. You could almost say it has too _much_ taste, everyone's at
+the same time, and a taste that excludes nothing has nothing to say, since on
+this essay's own terms taste is exclusion. He told us as much: decisive about
+what he likes _and_ what he does not. And the other half is that Rubin's
+backward look was felt, the verdict forming in the body before the words
+arrived, which is where a commitment comes from at all.
+
+The model has looked at more than he could hear in a thousand lifetimes, and not
+one second of it ever landed as liking, no wager placed and none paid out. What
+they furnish instead is speed, and speed unaccompanied is not the same as taste.
+Given time, it is your judgement that decides whether the output was worth
+anything. I dwell on this at greater length in
+[this article](/blog/an-antidote-to-speed).
 
 And here is where it landed for me. With "teams" of agents now doing the making,
 the engineer's hands are coming off the instruments. We are shifting, whether we
@@ -185,7 +195,8 @@ sit in the room while the band plays, you decide what is good, decisively, and
 you express it clearly enough that the band can act on it.
 
 Now just imagine, as a fun mental exercise, if real-life Rick were to employ
-`--dangerously-skip-permissions`.
+`--dangerously-skip-permissions` in his processes. Perhaps, in some strange
+organic way, he already **does**?
 
 Software engineers need good taste. Arguably we always did, but AI has just
 promoted it from a nice-to-have to the differentiating skill, because when any
@@ -193,12 +204,12 @@ fella and his laptop can generate the notes (or 20k lines of code in a day), all
 that is left to be paid for, really, is knowing which ones to keep.
 
 A producer does more than pick the good takes though. He tells the band what to
-play in the first place. These days I spend most of my time writing specs and
+play in the first place. These days, I spend most of my time writing specs and
 documents that get turned, near enough directly, into code, and I have written
-some bad ones. When a spec is vague about the hard case, the code is vague about
-it too, and you find out much later than you would like. So the taste has not
-gone anywhere. It just has to show up earlier now, in the thing you write before
-any code exists.
+plenty of bad ones. When a spec is vague about the hard case, the code is vague
+about it too, and you find out much later than you would like. So the taste has
+not gone anywhere. It just has to show up earlier now, in the thing you write
+before any code exists.
 
 Which is really only to say that a document is a piece of writing, and writing
 has been a matter of taste since long before any of us turned up to fret over
@@ -211,8 +222,12 @@ machine was any good.
 ## But Is Your Taste Any Good?
 
 There is, of course, an obvious objection loitering here. How do you know you
-_possess_ good taste? What even is good taste? And the blunt answer is that it
-is subjective the whole way down, with no bedrock to strike.
+_possess_ good taste? What even is good taste? The easy answer is that it is
+subjective the whole way down, with no bedrock to strike. Only that is not quite
+right, and the rest of this piece keeps quietly contradicting it, because in
+software taste turns out to be judgement on a very long feedback loop. The bill
+does come, just years late, and it tends to land on whoever inherited the code
+rather than whoever wrote it.
 
 Culture and creed aside, a human is a human. A jarring system or product leaves
 a sourness in the mouth, and you know the flavour at once: the settings screen
@@ -256,13 +271,11 @@ The trouble is that "it works" is only true on the day you measured it, and code
 has to keep being true for years afterwards, usually in the hands of someone who
 was not in the room when you wrote it. I learned this the hard way at Amazon,
 and not from my own code. Most of the pain came from systems I inherited, things
-built by people long gone, that I carried the pager for without ever having the
+built by people long gone, for which I carried the pager without ever having the
 capacity to change them. You get woken at three in the morning by a decision
 someone made years ago, in a service you barely understand, and there is no
 fixing it tonight. You are just holding it upright until sunrise. That is the
-part nobody warns you about: taste, or the absence of it, is rarely paid for by
-the person who spent it. It is paid for by whoever is on call when the bill
-comes due.
+part nobody warns you about.
 
 That is where the value of this subject actually hides. It is the outage that
 never happened because the failure mode was sitting right there where nobody
@@ -276,12 +289,19 @@ of them and you get a system nobody dares touch, where a one-line change takes a
 week because it could be anywhere and the code refuses to tell you. That is what
 taste quietly prevents.
 
+Of course, in reality, many of those prior decisions were never about taste at
+all. They were made under pressure, against time constraints that were often
+arbitrary. You could argue that undoes the whole premise. Or you could argue it
+is the better case for the machines: let them absorb the pressure and weed out
+the rushed decisions earlier, so we can "Rubin" our systems up to a standard we
+actually chose.
+
 So no, taste is not decoration. It is most of the reason software you shipped a
 year ago is still standing, and still bearable to work on, for whoever inherited
 it. It is a hard thing to teach, yet one must learn. Experience is the learning,
 and education, more often than we would like to admit, just gets in the way. And
-if you don't fancy good taste in wine or music, then at least have good taste in
-your own work.
+if you don't fancy good wine or music, then at least have good taste in your own
+work.
 
 But hey, that's just my opinion after all.
 
