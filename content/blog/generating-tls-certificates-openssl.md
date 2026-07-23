@@ -5,7 +5,7 @@ image: /images/blog/galway-lake.jpg
 description:
   Using OpenSSL to generate TLS certificates for your applications to secure
   your development servers or simply to understand how to create certificates.
-date: 2023/05/05
+date: 2023-05-05
 updated: 2023/05/09
 tags:
   - tls

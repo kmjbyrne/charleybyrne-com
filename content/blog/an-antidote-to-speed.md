@@ -10,6 +10,7 @@ imageCredit: Natalia Gutnik
 imageCreditUrl: https://www.instagram.com/__dust__in__the__wind__?igsh=MTEwd28zZ2Nta3IwNQ==
 category: Technology
 tags: [ai, productivity, learning, reflection]
+featured: true
 ---
 
 There is a particular seduction to speed. With tools like Claude Code, you can
@@ -217,9 +218,7 @@ necessarily the ones who use them most intensively. They are the ones who know
 when to put them down, sit with a hard problem, and let understanding catch up
 with output.
 
-That balance is worth protecting. In a world that increasingly rewards velocity,
-the willingness to slow down is not a weakness. It is a discipline.
-
-> Slow is smooth and smooth is fast.
->
-> Some tough guys
+I may not be the wisest Homo sapien on the go, but in my view, that balance is
+worth protecting in a world that increasingly rewards the illusion of velocity.
+The willingness to slow down is not a weakness so much as an intentional harness
+around one's cognitive discipline.

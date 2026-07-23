@@ -14,6 +14,9 @@ const featured = computed(() => posts.value?.[0] ?? null)
 const rail = computed(() => posts.value?.slice(1, 3) ?? [])
 const grid = computed(() => posts.value?.slice(3) ?? [])
 
+const featuredPosts = computed(() => posts.value?.filter(p => p.featured) ?? [])
+const featuredOpen = ref(false)
+
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-IE', {
     year: 'numeric',
@@ -25,10 +28,32 @@ function formatDate(dateStr: string): string {
 
 <template>
   <UContainer class="py-12">
+    <div v-if="featuredPosts.length" class="mb-10 border-b border-default pb-10">
+      <button
+        class="flex w-full items-center justify-between text-left"
+        @click="featuredOpen = !featuredOpen"
+      >
+        <span class="text-dimmed text-xs font-semibold uppercase tracking-widest">Featured</span>
+        <UIcon
+          :name="featuredOpen ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
+          class="text-dimmed h-4 w-4 transition-transform"
+        />
+      </button>
+
+      <div v-if="featuredOpen" class="mt-6 flex gap-6 overflow-x-auto pb-2">
+        <PostCard
+          v-for="post in featuredPosts"
+          :key="post.path"
+          :post="post"
+          variant="featured"
+        />
+      </div>
+    </div>
+
     <div v-if="featured">
       <div class="grid grid-cols-1 gap-0 lg:grid-cols-5 lg:divide-x lg:divide-default">
         <NuxtLink
-          :to="featured.path"
+          :to="useFlatBlogPath(featured.path)"
           class="group flex flex-col justify-between gap-6 pb-10 lg:col-span-3 lg:pb-0 lg:pr-10"
         >
           <div class="flex flex-col gap-5">
@@ -37,7 +62,7 @@ function formatDate(dateStr: string): string {
               :src="featured.image"
               :alt="featured.title"
               class="w-full rounded aspect-[16/9] object-cover"
-            />
+            >
             <p class="text-dimmed text-sm">{{ formatDate(featured.date) }}</p>
 
             <h2 class="text-highlighted text-3xl font-bold leading-tight tracking-tight transition-colors group-hover:text-primary sm:text-4xl">
@@ -64,29 +89,12 @@ function formatDate(dateStr: string): string {
           v-if="rail.length"
           class="flex flex-col divide-y divide-default border-t border-default pt-10 lg:col-span-2 lg:border-t-0 lg:pl-10 lg:pt-0"
         >
-          <NuxtLink
+          <PostCard
             v-for="post in rail"
             :key="post.path"
-            :to="post.path"
-            class="group flex flex-col gap-3 py-6 first:pt-0 last:pb-0"
-          >
-            <img
-              v-if="post.image"
-              :src="post.image"
-              :alt="post.title"
-              class="w-full rounded aspect-[16/9] object-cover"
-            />
-            <p class="text-dimmed text-xs">{{ formatDate(post.date) }}</p>
-            <h3 class="text-highlighted text-lg font-semibold leading-snug transition-colors group-hover:text-primary">
-              {{ post.title }}
-            </h3>
-            <span
-              v-if="post.category"
-              class="text-dimmed text-xs font-semibold uppercase tracking-widest"
-            >
-              {{ post.category }}
-            </span>
-          </NuxtLink>
+            :post="post"
+            variant="rail"
+          />
         </div>
       </div>
 
@@ -94,26 +102,12 @@ function formatDate(dateStr: string): string {
         v-if="grid.length"
         class="mt-10 grid grid-cols-1 gap-px border-t border-default pt-10 sm:grid-cols-2 lg:grid-cols-3"
       >
-        <NuxtLink
+        <PostCard
           v-for="post in grid"
           :key="post.path"
-          :to="post.path"
-          class="group flex flex-col gap-3 p-6 transition-colors hover:bg-elevated/50 rounded"
-        >
-          <p class="text-dimmed text-xs">{{ formatDate(post.date) }}</p>
-          <h3 class="text-highlighted text-base font-semibold leading-snug transition-colors group-hover:text-primary">
-            {{ post.title }}
-          </h3>
-          <p class="text-muted line-clamp-2 text-sm leading-relaxed">
-            {{ post.description }}
-          </p>
-          <span
-            v-if="post.category"
-            class="text-dimmed mt-auto text-xs font-semibold uppercase tracking-widest"
-          >
-            {{ post.category }}
-          </span>
-        </NuxtLink>
+          :post="post"
+          variant="grid"
+        />
       </div>
     </div>
 

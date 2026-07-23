@@ -15,6 +15,7 @@ export default defineContentConfig({
         imageCredit: z.string().optional(),
         imageCreditUrl: z.string().optional(),
         tags: z.array(z.string()).optional(),
+        featured: z.boolean().optional(),
       }),
     }),
     pages: defineCollection({

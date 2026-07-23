@@ -3,7 +3,7 @@ title: Framework Paralysis to NuxtJS
 description: Navigating the big sea
 category: Technology
 image: /images/blog/lisbon-sea.jpg
-date: 2023/05/05
+date: 2023-05-05
 updated: 2023/05/09
 tags:
   - nuxtjs

@@ -36,7 +36,7 @@ function formatDate(dateStr: string): string {
       <NuxtLink
         v-for="post in posts"
         :key="post.path"
-        :to="post.path"
+        :to="useFlatBlogPath(post.path)"
         class="group flex gap-4 py-6"
       >
         <div

@@ -5,7 +5,7 @@ description:
   verify it with the corresponding public key.
 category: Security
 image: /images/blog/jwt-image.png
-date: 2023/06/05
+date: 2023-06-05
 updated: 2023/06/08
 public: true
 tags:

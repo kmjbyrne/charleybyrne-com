@@ -6,7 +6,8 @@ description:
   How to self-host a Docker container registry behind NGINX with htpasswd
   authentication and mutual TLS client certificates, locking access down to
   specific machines you control.
-date: 2026/05/19
+date: 2026-05-19
+public: true
 tags:
   - docker
   - nginx
