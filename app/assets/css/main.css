@@ -2,7 +2,7 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
 }
 
 :root {
@@ -17,8 +17,8 @@
 }
 
 .prose {
-  font-size: 1.0625rem;
-  line-height: 1.8;
+  font-size: 1.1875rem;
+  line-height: 1.7;
 }
 
 .prose p {

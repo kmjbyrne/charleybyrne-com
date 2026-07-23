@@ -101,7 +101,7 @@ out: taste classifies, and it classifies the classifier.
 
 ### Trained By Contrast
 
-I believe, taste, in the literal sense, is built out of contrast. Savoury means
+I believe taste, in the literal sense, is built out of contrast. Savoury means
 almost nothing until there is sweetness to lean against; salt to sharpen the
 caramel, acid to cut through the fat. And we are the luckiest generation ever to
 sit down to dinner, with chillies from one continent, citrus from another and
@@ -153,12 +153,15 @@ moments where somebody who trusted their own palate looked at a nearly-finished
 thing and said no, not yet. I still cannot bring myself to throw the packaging
 away, which is a slightly embarrassing thing to admit about a cardboard box.
 
-Software perhaps sometimes admits the same signature. A codebase whose naming is
+Software perhaps sometimes admits the same flair. A codebase whose naming is
 coherent, an API that reads as though a single mind presided over it, an
-interface with no discordant seams. Taste in a system is almost never perceived
-head-on, any more than you consciously admire the equilibrium of a well-composed
-dish. You simply register the absence of friction, the merciful sense that
-nothing is clamouring for your attention.
+interface with no discordant seams (although granted more mathematical in nature
+in this sense than food, who says maths can't be tasteful ☺️).
+
+Taste in a system is almost never perceived head-on, any more than you
+consciously admire the equilibrium of a well-composed dish. You simply register
+the absence of friction, the merciful sense that nothing is clamouring for your
+attention.
 
 ## The Producer's Chair
 
@@ -258,11 +261,11 @@ part nobody warns you about: taste, or the absence of it, is rarely paid for by
 the person who spent it. It is paid for by whoever is on call when the bill
 comes due.
 
-That is where the value of taste actually hides. It is the outage that never
-happened because the failure mode was sitting right there where nobody could
-miss it, the page that never came. Nobody thanks you for it, and that is rather
-the point, the same way nobody compliments a dish for not being too salty, or
-the way I still cannot bring myself to bin the box the phone came in.
+That is where the value of this subject actually hides. It is the outage that
+never happened because the failure mode was sitting right there where nobody
+could miss it, the page that never came. Nobody thanks you for it, and that is
+rather the point, the same way nobody compliments a dish for not being too
+salty, or the way I still cannot bring myself to bin the box the phone came in.
 
 And the absence compounds in a way a single bad decision never hints at. Each
 shortcut works, in the narrow sense the tests care about. Stack a few thousand
@@ -272,18 +275,19 @@ taste quietly prevents.
 
 So no, taste is not decoration. It is most of the reason software you shipped a
 year ago is still standing, and still bearable to work on, for whoever inherited
-it. Taste is a hard thing to teach, yet one must learn. Experience is the
-learning, and education, more often than we would like to admit, just gets in
-the way.
+it. It is a hard thing to teach, yet one must learn. Experience is the learning,
+and education, more often than we would like to admit, just gets in the way. And
+if you don't fancy good taste in wine or music, then at least have good taste in
+your own work.
 
 But hey, that's just my opinion after all.
 
-![Grandpa Simpson's "Old Man Yells at Cloud" newspaper headline](/images/blog/tv-simpsons.gif)
+<iframe src="https://giphy.com/embed/fqtyYcXoDV0X6ss8Mf" width="100%" height="365" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/moodman-fqtyYcXoDV0X6ss8Mf">via GIPHY</a></p>
+
+P.S. pun was intended.
 
 <!-- prettier-ignore-start -->
 ::AiDisclaimer
 Since it feels only fair given the subject: I used AI/LLMs to help research the studies linked above and to review drafts for clarity. Every thought, argument and narrative element here is my own. The taste, for better or worse, is human.
 ::
 <!-- prettier-ignore-end -->
-
-P.S. pun was intended.
