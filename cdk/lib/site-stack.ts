@@ -1,6 +1,5 @@
 import * as cdk from 'aws-cdk-lib/core'
 import * as s3 from 'aws-cdk-lib/aws-s3'
-import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment'
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront'
 import * as acm from 'aws-cdk-lib/aws-certificatemanager'
 import * as route53 from 'aws-cdk-lib/aws-route53'
@@ -80,27 +79,26 @@ function handler(event) {
           ],
         },
       ],
+      // Serve the prerendered 404 page as a real 404. Never rewrite errors
+      // to index.html with a 200: CloudFront caches that fallback under the
+      // requested URL, which poisons /_nuxt asset URLs with HTML mid-deploy.
       errorConfigurations: [
         {
-          responsePagePath: '/index.html',
-          responseCode: 200,
+          responsePagePath: '/404.html',
+          responseCode: 404,
           errorCode: 404,
         },
         {
-          responsePagePath: '/index.html',
-          responseCode: 200,
+          responsePagePath: '/404.html',
+          responseCode: 404,
           errorCode: 403,
         },
       ],
     })
 
-    new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-      sources: [s3deploy.Source.asset('../.output/public')],
-      destinationBucket: siteBucket,
-      distribution,
-      distributionPaths: ['/*'],
-    })
-
+    // Content is deployed by bin/deploy (staged sync + invalidation), not by
+    // the stack. The BucketDeployment custom resource re-uploaded the whole
+    // site on every infra change and timed out waiting on invalidations.
     new route53.ARecord(this, 'AliasRecord', {
       zone: hostedZone,
       recordName: config.domainName,
