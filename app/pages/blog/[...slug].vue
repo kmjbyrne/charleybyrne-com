@@ -109,6 +109,16 @@ onMounted(() => {
 const scrollProgress = ref(0);
 const tocOpen = ref(false);
 
+// The slideover's UContentToc mounts on first open, after the page hooks that
+// register headings with its scrollspy have already fired. Re-firing the hook
+// on open lets the late-mounted instance pick the headings up.
+const nuxtApp = useNuxtApp();
+watch(tocOpen, async (open) => {
+  if (!open) return;
+  await nextTick();
+  await nuxtApp.callHook("page:loading:end");
+});
+
 onMounted(() => {
   const onScroll = () => {
     const el = document.documentElement;
@@ -152,12 +162,21 @@ function formatDate(dateStr: string): string {
       class="lg:hidden"
     >
       <template #body>
-        <nav class="flex flex-col gap-1 px-1">
-          <TocLinks
-            :links="post.body.toc.links"
-            @navigate="tocOpen = false"
-          />
-        </nav>
+        <UContentToc
+          :links="post.body.toc.links"
+          highlight
+          highlight-color="secondary"
+          highlight-variant="circuit"
+          default-open
+          :ui="{
+            root: 'static m-0 sm:m-0 p-0 sm:p-0 bg-transparent backdrop-blur-none max-h-none overflow-visible',
+            container: 'p-0 sm:p-0 lg:p-0 border-0 gap-3',
+            trigger: 'hidden',
+            list: 'ps-4',
+            indicator: 'ms-0',
+          }"
+          @move="tocOpen = false"
+        />
       </template>
     </USlideover>
 
@@ -330,6 +349,8 @@ function formatDate(dateStr: string): string {
                 container: 'p-0 sm:p-0 lg:p-0 border-0 gap-3',
                 trigger:
                   'text-xs uppercase tracking-widest text-highlighted py-0 mt-0',
+                list: 'ps-4',
+                indicator: 'ms-0',
               }"
             />
 
