@@ -222,7 +222,7 @@ function formatDate(dateStr: string): string {
             </h1>
             <p
               v-if="post.description"
-              class="text-muted text-lg leading-relaxed font-light"
+              class="text-muted text-xl leading-relaxed font-light"
             >
               {{ post.description }}
             </p>

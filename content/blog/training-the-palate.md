@@ -75,7 +75,7 @@ is worth asking a more basic question. What actually _is_ taste?
 ## Sweet Wine And Other Contrasts
 
 Begin with the literal sort. Ask most people what wine they favour and a fair
-number may admit, to a preference for something sweet. Put that to a sommelier
+number may admit to a preference for something sweet. Put that to a sommelier
 and you will naturally get a different response. Dry reds are meant to be the
 "grown-up" answer (or so they say), all tannin and structure and hard-won
 appreciation, and sweetness is where one is presumed to have loitered before one
@@ -183,6 +183,9 @@ the engineer's hands are coming off the instruments. We are shifting, whether we
 asked for it or not, into the "producer's" chair. Call it the "Rubin role". You
 sit in the room while the band plays, you decide what is good, decisively, and
 you express it clearly enough that the band can act on it.
+
+Now just imagine, as a fun mental exercise, if real-life Rick were to employ
+`--dangerously-skip-permissions`.
 
 Software engineers need good taste. Arguably we always did, but AI has just
 promoted it from a nice-to-have to the differentiating skill, because when any
