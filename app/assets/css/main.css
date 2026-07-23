@@ -17,8 +17,16 @@
 }
 
 .prose {
-  font-size: 1.1875rem;
+  /* 17px on phones scaling fluidly to 19px on desktop */
+  font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);
   line-height: 1.7;
+  /* Clearance so the floating contents pill never covers the final lines
+     at full scroll; includes the gesture-bar inset on notched phones */
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+}
+
+.prose p {
+  text-wrap: pretty;
 }
 
 .prose p {
