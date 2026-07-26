@@ -1,9 +1,9 @@
 ---
-title: Training The Palate For The Producer's Chair
+title: The Producer That Couldn't
 description:
   Nobody can teach you good taste, yet somehow you are expected to have it. A
   look at where it actually comes from, exploring the parallels in taste across
-  audio, food and software.
+  audio, food and software, for anyone who makes human things.
 date: 2026-07-12
 edited: 2026-07-23
 image: /images/blog/2026/water-droplet.jpg
@@ -203,8 +203,9 @@ sit in the room while the band plays, you decide what is good, decisively, and
 you express it clearly enough that the band can act on it.
 
 Now just imagine, as a fun mental exercise, if real-life Rick were to employ
-`--dangerously-skip-permissions` in his processes. Perhaps, in some strange
-organic way, he already **does**?
+`--dangerously-skip-permissions` in his processes. With Claude Code, we can pass
+that flag and let the agent do whatever it likes without ever stopping to ask us
+first. Perhaps, in some strange organic way, Rubin already **does**?
 
 Software engineers need good taste. Arguably we always did, but AI has just
 promoted it from a nice-to-have to the differentiating skill, because when any
