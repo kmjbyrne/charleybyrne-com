@@ -30,6 +30,6 @@
     "proseWrap": "always"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.116"
+    "@iconify-json/lucide": "^1.2.120"
   }
 }
