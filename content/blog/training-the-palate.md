@@ -9,8 +9,9 @@ edited: 2026-07-23
 image: /images/blog/2026/water-droplet.jpg
 imageCredit: Natalia Gutnik
 imageCreditUrl: https://www.instagram.com/__dust__in__the__wind__?igsh=MTEwd28zZ2Nta3IwNQ==
-category: Technology
+category: Rambles
 tags: [ai, learning, reflection]
+featured: true
 ---
 
 A while back, I came upon a few
@@ -180,6 +181,13 @@ this essay's own terms taste is exclusion. He told us as much: decisive about
 what he likes _and_ what he does not. And the other half is that Rubin's
 backward look was felt, the verdict forming in the body before the words
 arrived, which is where a commitment comes from at all.
+
+Suno is where this stops being abstract for me. In the right hands it can
+reverberate ideas and expressions into something audible far sooner than the
+crafted way ever could, and fair play to anyone using it like that. My own
+interest dies about ten seconds in, because what comes out never quite carries a
+groove or any reason to be, which is about what you would expect from every
+palate at once.
 
 The model has looked at more than he could hear in a thousand lifetimes, and not
 one second of it ever landed as liking, no wager placed and none paid out. What

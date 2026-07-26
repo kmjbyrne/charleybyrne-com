@@ -277,3 +277,9 @@ production.
 The evening called for Tegernseer Helles. Naturally, Kodee agreed. 🍻
 
 ![Kodee](/images/blog/2026/kodee.png)
+
+<!-- prettier-ignore-start -->
+::AiDisclaimer
+Only fair to note: the cover image for this post was generated with AI. The words are all my own.
+::
+<!-- prettier-ignore-end -->

@@ -483,3 +483,9 @@ resource consideration is disk space for stored image layers, which accumulates
 over time if you are pushing frequently. The registry supports garbage
 collection for cleaning up unreferenced layers, which is worth configuring if
 storage is constrained.
+
+<!-- prettier-ignore-start -->
+::AiDisclaimer
+Only fair to note: the cover image for this post was generated with AI. The words are all my own.
+::
+<!-- prettier-ignore-end -->

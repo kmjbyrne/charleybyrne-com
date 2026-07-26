@@ -8,7 +8,7 @@ date: 2026-05-14
 image: /images/blog/deer-eating-trees.jpg
 imageCredit: Natalia Gutnik
 imageCreditUrl: https://www.instagram.com/__dust__in__the__wind__?igsh=MTEwd28zZ2Nta3IwNQ==
-category: Technology
+category: Rambles
 tags: [ai, productivity, learning, reflection]
 featured: true
 ---

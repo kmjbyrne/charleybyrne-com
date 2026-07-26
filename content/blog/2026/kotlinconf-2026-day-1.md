@@ -206,3 +206,9 @@ That was day 1. As for night 1? When in ~~Rome~~ Munich! 🍻
 <!-- prettier-ignore -->
 ::RelatedPost{path="/blog/2026/kotlinconf-2026-day-2" title="KotlinConf 2026 — Day 2 Impressions"}
 ::
+
+<!-- prettier-ignore-start -->
+::AiDisclaimer
+Only fair to note: the cover image for this post was generated with AI. The words are all my own.
+::
+<!-- prettier-ignore-end -->
