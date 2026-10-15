@@ -13,7 +13,7 @@
     "@giscus/vue": "^3.1.1",
     "@iconify-json/simple-icons": "^1.2.92",
     "@nuxt/a11y": "^1.0.0-alpha.1",
-    "@nuxt/content": "^3.13.0",
+    "@nuxt/content": "^3.16.2",
     "@nuxt/eslint": "^1.15.2",
     "@nuxt/ui": "^4.9.0",
     "@tailwindcss/typography": "^0.5.0-alpha.3",
