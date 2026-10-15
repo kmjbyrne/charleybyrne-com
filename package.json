@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@giscus/vue": "^3.1.1",
-    "@iconify-json/simple-icons": "^1.2.82",
+    "@iconify-json/simple-icons": "^1.2.92",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/content": "^3.13.0",
     "@nuxt/eslint": "^1.15.2",
